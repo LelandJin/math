@@ -1,0 +1,105 @@
+General:
+  ConfigurationType: StaticLibrary
+  UseOfMfc: false
+  IntDir: ../temp/CcpMath/$(Platform)/$(Configuration)/$(PlatformToolset)/
+  OutDir: ../../autobuild/CcpMath/$(Platform)/$(PlatformToolset)/
+  TargetExt: .lib
+
+ClCompile:
+  EnableEnhancedInstructionSet: StreamingSIMDExtensions2
+  PrecompiledHeader: NotUsing
+  DebugInformationFormat: OldStyle
+  WarningLevel: Level3
+  TreatWarningAsError: true
+  BufferSecurityCheck: false
+  AdditionalIncludeDirectories:
+  - .
+
+Link:
+  GenerateDebugInformation: true
+
+BaseConfigurations:
+  DebugBase:
+    ClCompile:
+      PreprocessorDefinitions:
+      - _DEBUG
+      Optimization: Disabled
+      RuntimeLibrary: MultiThreadedDebugDLL
+
+  ReleaseBase:
+    ClCompile:
+      Optimization: MaxSpeed
+      RuntimeLibrary: MultiThreadedDLL
+
+  OrbisBase:
+    ClCompile:
+      CppExceptions: true
+      RuntimeTypeInfo: true
+      GenerateDebugInformation: true
+      AdditionalOptions:
+      - -Wno-missing-braces
+      - -Wno-unknown-pragmas
+      - -Wno-unused-variable
+
+  Android:
+    General:
+      AndroidTargetAPI: android-14
+      TargetExt: .a
+      AndroidStlType: gnustl_static
+      AndroidArch: armv7-a
+    ClCompile:
+      AdditionalOptions: -std=c++0x
+
+Configurations:
+  Debug|Win32,x64:
+    BaseConfigurations:
+    - DebugBase
+    General: 
+      TargetName: CcpMath_d
+
+  Debug|Linux32,Linux64,Mac32,Mac64,iOS6_1:
+    BaseConfigurations:
+    - DebugBase
+    General: 
+      TargetName: CcpMath_d
+
+  Debug|Tegra-Android:
+    BaseConfigurations:
+    - DebugBase
+    - Android
+    General: 
+      TargetName: libCcpMath_d
+
+  Release|Tegra-Android:
+    BaseConfigurations:
+    - ReleaseBase
+    - Android
+    General: 
+      TargetName: libCcpMath
+
+  Debug|ORBIS:
+    BaseConfigurations:
+    - DebugBase
+    - OrbisBase
+    General: 
+      TargetName: libCcpMath_d
+
+  Release|Win32,x64:
+    BaseConfigurations:
+    - ReleaseBase
+    General:
+      TargetName: CcpMath
+
+  Release|Linux32,Linux64,Mac32,Mac64,iOS6_1,Android:
+    BaseConfigurations:
+    - ReleaseBase
+    General:
+      TargetName: CcpMath
+
+  Release|ORBIS:
+    BaseConfigurations:
+    - ReleaseBase
+    - OrbisBase
+    General:
+      TargetName: libCcpMath
+

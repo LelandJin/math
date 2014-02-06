@@ -1,0 +1,14 @@
+Link:
+  AdditionalLibraryDirectories:
+  - ../../autobuild/CcpMath/$(Platform)/$(PlatformToolset)/
+
+Configurations:
+  Debug|Any:
+    Link:
+      AdditionalDependencies:
+      - CcpMath_d.lib
+
+  Release|Any:
+    Link:
+      AdditionalDependencies:
+      - CcpMath.lib
