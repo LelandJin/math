@@ -161,22 +161,22 @@ TEST( Plane, PlaneNormalize )
 	Plane b;
 
 	EXPECT_EQ( &b, &CcpMath::PlaneNormalize( b, a ) );
-	EXPECT_EQ( a.a / l, b.a );
-	EXPECT_EQ( a.b / l, b.b );
-	EXPECT_EQ( a.c / l, b.c );
-	EXPECT_EQ( a.d / l, b.d );
+	EXPECT_FLOAT_EQ( a.a / l, b.a );
+	EXPECT_FLOAT_EQ( a.b / l, b.b );
+	EXPECT_FLOAT_EQ( a.c / l, b.c );
+	EXPECT_FLOAT_EQ( a.d / l, b.d );
 
 	b = CcpMath::PlaneNormalize( a );
-	EXPECT_EQ( a.a / l, b.a );
-	EXPECT_EQ( a.b / l, b.b );
-	EXPECT_EQ( a.c / l, b.c );
-	EXPECT_EQ( a.d / l, b.d );
+	EXPECT_FLOAT_EQ( a.a / l, b.a );
+	EXPECT_FLOAT_EQ( a.b / l, b.b );
+	EXPECT_FLOAT_EQ( a.c / l, b.c );
+	EXPECT_FLOAT_EQ( a.d / l, b.d );
 
 	EXPECT_EQ( &b, D3DXPlaneNormalize( &b, &a ) );
-	EXPECT_EQ( a.a / l, b.a );
-	EXPECT_EQ( a.b / l, b.b );
-	EXPECT_EQ( a.c / l, b.c );
-	EXPECT_EQ( a.d / l, b.d );
+	EXPECT_FLOAT_EQ( a.a / l, b.a );
+	EXPECT_FLOAT_EQ( a.b / l, b.b );
+	EXPECT_FLOAT_EQ( a.c / l, b.c );
+	EXPECT_FLOAT_EQ( a.d / l, b.d );
 }
 
 TEST( Plane, PlaneIntersectLine ) 

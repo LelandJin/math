@@ -134,8 +134,8 @@ TEST( Vector2Test, Comparisons )
 TEST( Vector2Test, Length ) 
 {
 	Vector2 a( 1.f, 2.f );
-	EXPECT_EQ( sqrt( 5.f ), CcpMath::Vec2Length( a ) );
-	EXPECT_EQ( sqrt( 5.f ), D3DXVec2Length( &a ) );
+	EXPECT_EQ( sqrtf( 5.f ), CcpMath::Vec2Length( a ) );
+	EXPECT_EQ( sqrtf( 5.f ), D3DXVec2Length( &a ) );
 	EXPECT_EQ( 5.f, CcpMath::Vec2LengthSq( a ) );
 	EXPECT_EQ( 5.f, D3DXVec2LengthSq( &a ) );
 }

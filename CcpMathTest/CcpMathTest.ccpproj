@@ -1,7 +1,6 @@
 Imports:
 - ../core_project.yaml
-- ../CcpMath/uses_CcpMath.yaml
-- ../../../../../../sdk/GoogleTest/1.6.0/gtest.yaml
+- ../../../../../../sdk/GoogleTest/1.7.0/gtest.yaml
 
 General:
   ConfigurationType: Application
@@ -17,6 +16,7 @@ ClCompile:
   WarningLevel: Level3
   TreatWarningAsError: true
   BufferSecurityCheck: false
+  FloatingPointModel: Fast
   AdditionalIncludeDirectories:
   - .
   PreprocessorDefinitions:
@@ -39,14 +39,27 @@ BaseConfigurations:
     ClCompile:
       Optimization: MaxSpeed
       RuntimeLibrary: MultiThreadedDLL
-    General:
-      TargetName: CcpMathTest
 
 Configurations:
   Debug|Win32,x64,Linux64,Mac64:
+    Imports:
+    - ../CcpMath/uses_CcpMath.yaml
     BaseConfigurations:
     - Debug
 
   Release|Win32,x64,Linux64,Mac64:
+    Imports:
+    - ../CcpMath/uses_CcpMath.yaml
     BaseConfigurations:
     - Release
+    General:
+      TargetName: CcpMathTest
+
+  Release_Coverage|Mac64:
+    Imports:
+    - ../CcpMath/uses_CcpMathCoverage.yaml
+    BaseConfigurations:
+    - Release
+    General:
+      TargetName: CcpMathTest_cc
+      GenerateCodeCoverage: true

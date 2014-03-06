@@ -166,8 +166,8 @@ TEST( Vector3Test, DotProduct )
 TEST( Vector3Test, Length ) 
 {
 	Vector3 a( 1.f, 2.f, 3.f );
-	EXPECT_EQ( sqrt( 14.f ), CcpMath::Vec3Length( a ) );
-	EXPECT_EQ( sqrt( 14.f ), D3DXVec3Length( &a ) );
+	EXPECT_EQ( sqrtf( 14.f ), CcpMath::Vec3Length( a ) );
+	EXPECT_EQ( sqrtf( 14.f ), D3DXVec3Length( &a ) );
 	EXPECT_EQ( 14.f, CcpMath::Vec3LengthSq( a ) );
 	EXPECT_EQ( 14.f, D3DXVec3LengthSq( &a ) );
 }
@@ -425,7 +425,7 @@ TEST( Vector3Test, Vec3Transform )
 		-0.4829292893409729f, 0.832030177116394f, 0.27295631170272827f, 0.0f, 
 		0.3947397768497467f, -0.07139250636100769f, 0.9160150289535522f, 0.0f, 
 		1.0f, 2.0f, 3.0f, 1.0f );
-	Vector4 result( 3.9317171573638916f, 0.6718793f, 4.9081746f, 1.0f );
+	Vector4 result( 3.93171716f, 0.671879411f, 4.90817451f, 1.0f );
 
 	Vector3 v( 1.f, -2.f, 3.f );
 	Vector4 r1;
@@ -447,7 +447,7 @@ TEST( Vector3Test, Vec3TransformCoord )
 		-0.4829292893409729f, 0.832030177116394f, 0.27295631170272827f, 0.0f, 
 		0.3947397768497467f, -0.07139250636100769f, 0.9160150289535522f, 0.0f, 
 		1.0f, 2.0f, 3.0f, 1.0f );
-	Vector3 result( 3.9317171573638916f, 0.6718793f, 4.9081746f );
+	Vector3 result( 3.93171716f, 0.671879411f, 4.90817451f );
 
 	Vector3 v( 1.f, -2.f, 3.f );
 	Vector3 r1;
@@ -469,7 +469,7 @@ TEST( Vector3Test, Vec3TransformNormal )
 		-0.4829292893409729f, 0.832030177116394f, 0.27295631170272827f, 0.0f, 
 		0.3947397768497467f, -0.07139250636100769f, 0.9160150289535522f, 0.0f, 
 		1.0f, 2.0f, 3.0f, 1.0f );
-	Vector3 result( 2.9317171573638916f, -1.3281207f, 1.9081746f );
+	Vector3 result( 2.93171716f, -1.32812059f, 1.90817451f );
 
 	Vector3 v( 1.f, -2.f, 3.f );
 	Vector3 r1;

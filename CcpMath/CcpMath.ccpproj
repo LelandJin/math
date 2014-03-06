@@ -12,6 +12,7 @@ ClCompile:
   WarningLevel: Level3
   TreatWarningAsError: true
   BufferSecurityCheck: false
+  FloatingPointModel: Fast
   AdditionalIncludeDirectories:
   - .
 
@@ -30,6 +31,16 @@ BaseConfigurations:
     ClCompile:
       Optimization: MaxSpeed
       RuntimeLibrary: MultiThreadedDLL
+
+  CodeCoverage:
+    General: 
+      GenerateCodeCoverage: true
+    ClCompile:
+      PreprocessorDefinitions:
+      - NDEBUG
+      Optimization: Disabled
+      RuntimeLibrary: MultiThreadedDLL
+      DebugInformationFormat: ProgramDatabase
 
   OrbisBase:
     ClCompile:
@@ -95,6 +106,12 @@ Configurations:
     - ReleaseBase
     General:
       TargetName: CcpMath
+
+  Release_Coverage|Mac32,Mac64:
+    BaseConfigurations:
+    - CodeCoverage
+    General:
+      TargetName: CcpMath_cc
 
   Release|ORBIS:
     BaseConfigurations:

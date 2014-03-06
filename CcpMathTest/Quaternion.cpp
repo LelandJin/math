@@ -189,7 +189,7 @@ TEST( Quaternion, Multiplication )
 {
 	Quaternion q1( 1.f, 2.f, 3.f, 4.f );
 	Quaternion q2( 2.4f, 7.1f, -3.1f, 0.2f );
-	Quaternion result(37.299999f, 18.5f, -14.099999f, -6.5f);
+	Quaternion result(37.2999992f, 18.4999981f, -14.0999994f, -6.50000095f);
 
 	Quaternion q3;
 	EXPECT_EQ( &q3, &CcpMath::QuaternionMultiply( q3, q1, q2 ) );
@@ -225,8 +225,8 @@ TEST( Quaternion, QuaternionDot )
 {
 	Quaternion q1( 1.f, 2.f, 3.f, 4.f );
 	Quaternion q2( 2.4f, 7.1f, -3.1f, 0.2f );
-	EXPECT_EQ( 8.100000381469727f, CcpMath::QuaternionDot( q1, q2 ) );
-	EXPECT_EQ( 8.100000381469727f, D3DXQuaternionDot( &q1, &q2 ) );
+	EXPECT_FLOAT_EQ( 8.100000381469727f, CcpMath::QuaternionDot( q1, q2 ) );
+	EXPECT_FLOAT_EQ( 8.100000381469727f, D3DXQuaternionDot( &q1, &q2 ) );
 
 	Quaternion q3( 0.f, 0.f, 0.f, 0.f );
 	EXPECT_EQ( 0.0f, CcpMath::QuaternionDot( q2, q3 ) );
@@ -344,13 +344,13 @@ TEST( Quaternion, QuaternionRotationAxis )
 	Quaternion result( 0.066121489f, 0.13224298f, 0.19836447f, 0.96891242f );
 
 	EXPECT_EQ( &q1, &CcpMath::QuaternionRotationAxis( q1, axis, angle ) );
-	EXPECT_TRUE( result == q1 );
+	EXPECT_QUATERNION_EQ( result, q1 );
 
 	q2 = CcpMath::QuaternionRotationAxis( axis, angle );
-	EXPECT_TRUE( result == q2 );
+	EXPECT_QUATERNION_EQ( result, q2 );
 
 	EXPECT_EQ( &q3, D3DXQuaternionRotationAxis( &q3, &axis, angle ) );
-	EXPECT_TRUE( result == q3 );
+	EXPECT_QUATERNION_EQ( result, q3 );
 }
 
 TEST( Quaternion, QuaternionRotationYawPitchRoll ) 
@@ -369,7 +369,7 @@ TEST( Quaternion, QuaternionRotationYawPitchRoll )
 	float yaw = 0.5f;
 	float pitch = 0.6f;
 	float roll = 0.7f;
-	Quaternion result( 0.35001889f, 0.12384151f, 0.24871880f, 0.89458877f );
+	Quaternion result( 0.350018859f, 0.123841502f, 0.248718783f, 0.894588768f );
 
 	EXPECT_EQ( &q1, &CcpMath::QuaternionRotationYawPitchRoll( q1, yaw, pitch, roll ) );
 	EXPECT_TRUE( result == q1 );
@@ -506,22 +506,22 @@ TEST( Quaternion, D3DXQuaternionSlerp )
 	Quaternion q1, q2, q3;
 
 	EXPECT_EQ( &q1, &CcpMath::QuaternionSlerp( q1, a, b, 0.0f ) );
-	EXPECT_TRUE( q1 == a );
+	EXPECT_QUATERNION_EQ( a, q1 );
 
 	q2 = CcpMath::QuaternionSlerp( a, b, 0.0f );
-	EXPECT_TRUE( q2 == a );
+	EXPECT_QUATERNION_EQ( q2, a );
 	
 	EXPECT_EQ( &q3, D3DXQuaternionSlerp( &q3, &a, &b, 0.0f ) );
-	EXPECT_TRUE( q3 == a );
+	EXPECT_QUATERNION_EQ( a, q3 );
 
 	EXPECT_EQ( &q1, &CcpMath::QuaternionSlerp( q1, a, b, 1.0f ) );
-	EXPECT_TRUE( q1 == b );
+	EXPECT_QUATERNION_EQ( b, q1 );
 
 	q2 = CcpMath::QuaternionSlerp( a, b, 1.0f );
-	EXPECT_TRUE( q2 == b );
+	EXPECT_QUATERNION_EQ( b, q2 );
 	
 	EXPECT_EQ( &q3, D3DXQuaternionSlerp( &q3, &a, &b, 1.0f ) );
-	EXPECT_TRUE( q3 == b );
+	EXPECT_QUATERNION_EQ( b, q3 );
 
 	Quaternion half( 0.57353938f, -0.11470790f, 0.57353932f, 0.57353932f );
 
@@ -545,22 +545,22 @@ TEST( Quaternion, QuaternionSquad )
 	Quaternion q1, q2, q3;
 
 	EXPECT_EQ( &q1, &CcpMath::QuaternionSquad( q1, a, b, c, d, 0.0f ) );
-	EXPECT_TRUE( q1 == a );
+	EXPECT_QUATERNION_EQ( a, q1 );
 
 	q2 = CcpMath::QuaternionSquad( a, b, c, d, 0.0f );
-	EXPECT_TRUE( q2 == a );
+	EXPECT_QUATERNION_EQ( a, q2 );
 	
 	EXPECT_EQ( &q3, D3DXQuaternionSquad( &q3, &a, &b, &c, &d, 0.0f ) );
-	EXPECT_TRUE( q3 == a );
+	EXPECT_QUATERNION_EQ( a, q3 );
 
 	EXPECT_EQ( &q1, &CcpMath::QuaternionSquad( q1, a, b, c, d, 1.0f ) );
-	EXPECT_TRUE( q1 == d );
+	EXPECT_QUATERNION_EQ( d, q1 );
 
 	q2 = CcpMath::QuaternionSquad( a, b, c, d, 1.0f );
-	EXPECT_TRUE( q2 == d );
+	EXPECT_QUATERNION_EQ( d, q2 );
 	
 	EXPECT_EQ( &q3, D3DXQuaternionSquad( &q3, &a, &b, &c, &d, 1.0f ) );
-	EXPECT_TRUE( q3 == d );
+	EXPECT_QUATERNION_EQ( d, q3 );
 }
 
 TEST( Quaternion, QuaternionSquadSetup ) 
@@ -570,7 +570,7 @@ TEST( Quaternion, QuaternionSquadSetup )
 	Quaternion c = CcpMath::QuaternionNormalize( Quaternion( 10.4f, 1.3f, -4.2f, 0.3f ) );
 	Quaternion d = CcpMath::QuaternionNormalize( Quaternion( 1.4f, 0.7f, 1.2f, -0.7f ) );
 
-	Quaternion result1( 0.50800782f, -0.78553301f, 0.35136759f, -0.03750811f );
+	Quaternion result1( 0.50800782f, -0.78553301f, 0.35136759f, -0.03750813f );
 	Quaternion result2( 0.66406322f, 0.19605064f, -0.71727610f, 0.078097314f );
 	Quaternion result3( 0.92075068f, 0.11509383f, -0.37184161f, 0.026560118f );
 

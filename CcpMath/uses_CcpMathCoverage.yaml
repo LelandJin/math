@@ -1,0 +1,9 @@
+Link:
+  AdditionalLibraryDirectories:
+  - ../../autobuild/CcpMath/$(Platform)/$(PlatformToolset)/
+
+Configurations:
+  Release|Mac64:
+    Link:
+      AdditionalDependencies:
+      - CcpMath_cc.lib

@@ -886,9 +886,9 @@ TEST( Matrix, MatrixRotationYawPitchRoll )
 	EXPECT_TRUE( CcpMath::MatrixIsIdentity( mat3 ) );
 
 	Matrix result(
-		-0.42691749f, -0.058726668f, 0.90238154f, 0.0f, 
+		-0.42691767f, -0.05872672f, 0.90238154f, 0.0f, 
 		-0.83373761f, 0.41198230f, -0.36763042f, 0.0f, 
-		-0.35017547f, -0.90929741f, -0.22484501f, 0.0f, 
+		-0.35017547f, -0.90929741f, -0.2248453f, 0.0f, 
 		0.0f, 0.0f, 0.0f, 1.0f );
 
 	EXPECT_EQ( &mat1, &CcpMath::MatrixRotationYawPitchRoll( mat1, 1.f, 2.f, 3.f ) );
@@ -1172,7 +1172,7 @@ TEST( Matrix, MatrixPerspectiveOffCenterRH )
 	Matrix result(
 		0.0085836910f, 0.00000000f, 0.00000000f, 0.00000000f,
 		0.00000000f, -0.25000003f, 0.00000000f, 0.00000000f,
-		0.11587982f, -7.0000010f, -1.0001000f, -1.0000000f,
+		0.1158798f, -7.0000010f, -1.0001000f, -1.0000000f,
 		0.00000000f, 0.00000000f, -0.10001000f, 0.00000000f );
 
 	Matrix mat1, mat2, mat3;
@@ -1198,7 +1198,7 @@ TEST( Matrix, MatrixPerspectiveOffCenterLH )
 	Matrix result(
 		0.0085836910f, 0.00000000f, 0.00000000f, 0.00000000f,
 		0.00000000f, -0.25000003f, 0.00000000f, 0.00000000f,
-		-0.11587982f, 7.0000010f, 1.0001000f, 1.0000000f,
+		-0.1158798f, 7.0000010f, 1.0001000f, 1.0000000f,
 		0.00000000f, 0.00000000f, -0.10001000f, 0.00000000f );
 
 	Matrix mat1, mat2, mat3;
@@ -1273,7 +1273,7 @@ TEST( Matrix, MatrixOrthoOffCenterRH )
 		0.085836910f, 0.00000000f, 0.00000000f, 0.00000000f,
 		0.00000000f, -2.5000002f, 0.00000000f, 0.00000000f,
 		0.00000000f, 0.00000000f, -0.0010001000f, 0.00000000f,
-		-0.11587982f, 7.0000010f, -0.00010001001f, 1.0000000f );
+		-0.1158798f, 7.0000010f, -0.00010001001f, 1.0000000f );
 
 	Matrix mat1, mat2, mat3;
 	EXPECT_EQ( &mat1, &CcpMath::MatrixOrthoOffCenterRH( mat1, l, r, b, t, zn, zf ) );
@@ -1299,7 +1299,7 @@ TEST( Matrix, MatrixOrthoOffCenterLH )
 		0.085836910f, 0.00000000f, 0.00000000f, 0.00000000f,
 		0.00000000f, -2.5000002f, 0.00000000f, 0.00000000f,
 		0.00000000f, 0.00000000f, 0.0010001000f, 0.00000000f,
-		-0.11587982f, 7.0000010f, -0.00010001001f, 1.0000000f );
+		-0.1158798f, 7.0000010f, -0.00010001001f, 1.0000000f );
 
 	Matrix mat1, mat2, mat3;
 	EXPECT_EQ( &mat1, &CcpMath::MatrixOrthoOffCenterLH( mat1, l, r, b, t, zn, zf ) );
@@ -1334,9 +1334,9 @@ TEST( Matrix, MatrixReflect )
 {
 	Plane plane( -3.0f, -1.0f, 4.0f, 7.0f );
 	Matrix expected;
-    expected.m[0][0] = 0.3076923f; expected.m[0][1] = -0.2307692f; expected.m[0][2] = 0.923077f; expected.m[0][3] = 0.0f;
-    expected.m[1][0] = -0.2307692f; expected.m[1][1] = 0.923077f; expected.m[1][2] = 0.3076923f; expected.m[1][3] = 0.0f;
-    expected.m[2][0] = 0.923077f; expected.m[2][1] = 0.3076923f; expected.m[2][2] = -0.2307692f; expected.m[2][3] = 0.0f;
+    expected.m[0][0] = 0.3076923f; expected.m[0][1] = -0.23076928f; expected.m[0][2] = 0.923077f; expected.m[0][3] = 0.0f;
+    expected.m[1][0] = -0.23076928f; expected.m[1][1] = 0.923077f; expected.m[1][2] = 0.3076923f; expected.m[1][3] = 0.0f;
+    expected.m[2][0] = 0.923077f; expected.m[2][1] = 0.3076923f; expected.m[2][2] = -0.23076928f; expected.m[2][3] = 0.0f;
     expected.m[3][0] = 1.615385f; expected.m[3][1] = 0.5384615f; expected.m[3][2] = -2.153846f; expected.m[3][3] = 1.0f;
 
 	Matrix out;
@@ -1352,7 +1352,7 @@ TEST( Matrix, MatrixShadow )
     expected.m[0][0] = 12.786773f; expected.m[0][1] = 5.000961f; expected.m[0][2] = 4.353778f; expected.m[0][3] = 3.706595f;
     expected.m[1][0] = 1.882715f;  expected.m[1][1] = 8.805615f; expected.m[1][2] = 1.451259f; expected.m[1][3] = 1.235532f;
     expected.m[2][0] = -7.530860f; expected.m[2][1] = -6.667949f; expected.m[2][2] = 1.333590f; expected.m[2][3] = -4.942127f;
-    expected.m[3][0] = -13.179006f; expected.m[3][1] = -11.668910f; expected.m[3][2] = -10.158816f; expected.m[3][3] = -1.510094f;
+    expected.m[3][0] = -13.179006f; expected.m[3][1] = -11.668910f; expected.m[3][2] = -10.158816f; expected.m[3][3] = -1.5100942f;
 
 	Matrix out;
     EXPECT_EQ( &out, D3DXMatrixShadow( &out, &light, &plane ) );
