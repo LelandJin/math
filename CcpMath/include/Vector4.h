@@ -421,7 +421,6 @@ Vector4* D3DXVec4Transform
 	( Vector4 *pOut, const Vector4 *pV, const Matrix *pM );
 
 // Transform vector array by matrix.
-// Not used in trinity - skipping
 Vector4* D3DXVec4TransformArray
 	( Vector4 *pOut, uint32_t OutStride, const Vector4 *pV, uint32_t VStride, const Matrix *pM, uint32_t n );
 

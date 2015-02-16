@@ -114,3 +114,17 @@ Vector4* D3DXVec4Transform( Vector4 *pOut, const Vector4 *pV, const Matrix *pM )
 {
 	return &CcpMath::Vec4Transform( *pOut, *pV, *pM );
 }
+
+Vector4* D3DXVec4TransformArray( Vector4 *pOut, uint32_t OutStride, const Vector4 *pV, uint32_t VStride, const Matrix *pM, uint32_t n )
+{
+    Vector4* out = pOut;
+    const Vector4* v = pV;
+    for( uint32_t i = 0; i < n; ++i )
+    {
+        CcpMath::Vec4Transform( *out, *v, *pM );
+        out = reinterpret_cast<Vector4*>( reinterpret_cast<uint8_t*>( out ) + OutStride );
+        v = reinterpret_cast<const Vector4*>( reinterpret_cast<const uint8_t*>( v ) + VStride );
+    }
+    return pOut;
+}
+
