@@ -1,6 +1,6 @@
 Link:
   AdditionalLibraryDirectories:
-  - ../../autobuild/CcpMath/$(Platform)/$(PlatformToolset)/
+  - ../../../carbon/autobuild/CcpMath/$(Platform)/$(PlatformToolset)/
 
 Configurations:
   Debug|Any:

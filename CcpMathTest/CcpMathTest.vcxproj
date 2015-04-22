@@ -105,7 +105,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>True</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>../../autobuild/CcpMath/$(Platform)/$(PlatformToolset)/;$(CcpSdkPath)/googletest/1.7.0/lib/$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../../carbon/autobuild/CcpMath/$(Platform)/$(PlatformToolset)/;$(CcpSdkPath)/googletest/1.7.0/lib/$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
       <AdditionalDependencies>CcpMath.lib;gtest.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
@@ -128,7 +128,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>True</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>../../autobuild/CcpMath/$(Platform)/$(PlatformToolset)/;$(CcpSdkPath)/googletest/1.7.0/lib/$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../../carbon/autobuild/CcpMath/$(Platform)/$(PlatformToolset)/;$(CcpSdkPath)/googletest/1.7.0/lib/$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
       <AdditionalDependencies>CcpMath_d.lib;gtestd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
@@ -151,7 +151,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>True</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>../../autobuild/CcpMath/$(Platform)/$(PlatformToolset)/;$(CcpSdkPath)/googletest/1.7.0/lib/$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../../carbon/autobuild/CcpMath/$(Platform)/$(PlatformToolset)/;$(CcpSdkPath)/googletest/1.7.0/lib/$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
       <AdditionalDependencies>CcpMath_d.lib;gtestd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
@@ -174,7 +174,7 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>True</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>../../autobuild/CcpMath/$(Platform)/$(PlatformToolset)/;$(CcpSdkPath)/googletest/1.7.0/lib/$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>../../../carbon/autobuild/CcpMath/$(Platform)/$(PlatformToolset)/;$(CcpSdkPath)/googletest/1.7.0/lib/$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
       <AdditionalDependencies>CcpMath.lib;gtest.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
