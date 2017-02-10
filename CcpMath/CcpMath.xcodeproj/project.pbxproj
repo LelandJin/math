@@ -65,6 +65,7 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				SYMROOT = "../../autobuild/CcpMath/MacOsX$(ARCHS)/clang4.2";
 				OBJROOT = "../temp/CcpMath/MacOsX$(ARCHS)/$(CONFIGURATION)/clang4.2";
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				CONFIGURATION_TEMP_DIR = "../temp/CcpMath/MacOsX$(ARCHS)/$(CONFIGURATION)/clang4.2";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -253,6 +254,7 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				SYMROOT = "../../autobuild/CcpMath/MacOsX$(ARCHS)/clang4.2";
 				OBJROOT = "../temp/CcpMath/MacOsX$(ARCHS)/$(CONFIGURATION)/clang4.2";
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				CONFIGURATION_TEMP_DIR = "../temp/CcpMath/MacOsX$(ARCHS)/$(CONFIGURATION)/clang4.2";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
@@ -404,6 +406,7 @@
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				SYMROOT = "../../autobuild/CcpMath/MacOsX$(ARCHS)/clang4.2";
 				OBJROOT = "../temp/CcpMath/MacOsX$(ARCHS)/$(CONFIGURATION)/clang4.2";
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				CONFIGURATION_TEMP_DIR = "../temp/CcpMath/MacOsX$(ARCHS)/$(CONFIGURATION)/clang4.2";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					_DEBUG,

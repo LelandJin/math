@@ -229,6 +229,7 @@
 					);
 				SYMROOT = "../../autobuild/CcpMathTest/MacOsX$(ARCHS)/clang4.2";
 				OBJROOT = "../temp/CcpMathTest/MacOsX$(ARCHS)/$(CONFIGURATION)/clang4.2";
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				CONFIGURATION_TEMP_DIR = "../temp/CcpMathTest/MacOsX$(ARCHS)/$(CONFIGURATION)/clang4.2";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					_DEBUG,
@@ -321,6 +322,7 @@
 					);
 				SYMROOT = "../../autobuild/CcpMathTest/MacOsX$(ARCHS)/clang4.2";
 				OBJROOT = "../temp/CcpMathTest/MacOsX$(ARCHS)/$(CONFIGURATION)/clang4.2";
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				CONFIGURATION_TEMP_DIR = "../temp/CcpMathTest/MacOsX$(ARCHS)/$(CONFIGURATION)/clang4.2";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"CCPMATH_IMPLEMENT_D3DX_FUNCTIONS=1",
@@ -412,6 +414,7 @@
 					);
 				SYMROOT = "../../autobuild/CcpMathTest/MacOsX$(ARCHS)/clang4.2";
 				OBJROOT = "../temp/CcpMathTest/MacOsX$(ARCHS)/$(CONFIGURATION)/clang4.2";
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				CONFIGURATION_TEMP_DIR = "../temp/CcpMathTest/MacOsX$(ARCHS)/$(CONFIGURATION)/clang4.2";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"CCPMATH_IMPLEMENT_D3DX_FUNCTIONS=1",
