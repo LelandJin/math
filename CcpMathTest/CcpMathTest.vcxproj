@@ -197,6 +197,7 @@
     <PostBuildEvent/>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="autoversion.h"/>
     <ClInclude Include="CcpFloat.h"/>
   </ItemGroup>
   <ItemGroup>
