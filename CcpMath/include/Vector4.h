@@ -329,6 +329,18 @@ public:
 		return ( x != other.x || y != other.y || z != other.z || w != other.w );
 	}
 
+	// ----------------------------------------------------------------------------------
+	const Vector3& GetXYZ() const
+	{
+		return *reinterpret_cast<const Vector3*>( &x );
+	}
+
+	// ----------------------------------------------------------------------------------
+	Vector3& GetXYZ()
+	{
+		return *reinterpret_cast<Vector3*>( &x );
+	}
+
 	Vector4 operator*( const Matrix& m );
 public:
 	float x, y, z, w;
