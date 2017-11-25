@@ -1,5 +1,5 @@
 Imports:
-- ../core_project.yaml
+- ../core_project/core_project.yaml
 - ../../../../../../sdk/GoogleTest/1.7.0/gtest.yaml
 
 General:
