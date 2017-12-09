@@ -134,7 +134,7 @@
       <GenerateDebugInformation>True</GenerateDebugInformation>
       <AdditionalLibraryDirectories>../../../carbon/autobuild/CcpMath/$(Platform)/$(PlatformToolset)/;$(CcpSdkPath)/googletest/1.7.0/lib/$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
-      <AdditionalDependencies>gtestd.lib;CcpMath_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>CcpMath_d.lib;gtestd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ResourceCompile/>
     <Manifest/>
@@ -161,7 +161,7 @@
       <GenerateDebugInformation>True</GenerateDebugInformation>
       <AdditionalLibraryDirectories>../../../carbon/autobuild/CcpMath/$(Platform)/$(PlatformToolset)/;$(CcpSdkPath)/googletest/1.7.0/lib/$(Platform);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ProgramDatabaseFile>$(TargetDir)$(TargetName).pdb</ProgramDatabaseFile>
-      <AdditionalDependencies>gtestd.lib;CcpMath_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>CcpMath_d.lib;gtestd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ResourceCompile/>
     <Manifest/>
@@ -197,6 +197,7 @@
     <PostBuildEvent/>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="autoversion.h"/>
     <ClInclude Include="CcpFloat.h"/>
   </ItemGroup>
   <ItemGroup>
