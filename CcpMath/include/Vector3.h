@@ -10,7 +10,7 @@ struct Vector3
 	Vector3( float x, float y, float z );
 	Vector3( const XMVECTOR& other );
 
-	operator const XMVECTOR() const;
+	operator XMVECTOR() const;
 
 	float operator[]( int32_t index ) const;
 	float& operator[]( int32_t index );

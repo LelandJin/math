@@ -11,7 +11,7 @@ struct Vector4
 	Vector4( const Vector3& xyz, float w );
 	explicit Vector4( const XMVECTOR& other );
 
-	operator const XMVECTOR() const;
+	operator XMVECTOR() const;
 
 	float operator[]( int32_t index ) const;
 	float& operator[]( int32_t index );

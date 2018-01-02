@@ -19,7 +19,7 @@ inline Vector3::Vector3( const XMVECTOR& other )
 }
 
 // --------------------------------------------------------------------------------------
-inline Vector3::operator const XMVECTOR() const
+inline Vector3::operator XMVECTOR() const
 {
 	return XMLoadFloat3( ( const XMFLOAT3* )this );
 }

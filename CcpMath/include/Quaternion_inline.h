@@ -31,7 +31,7 @@ inline Quaternion::Quaternion( const Vector4& other )
 }
 
 // --------------------------------------------------------------------------------------
-inline Quaternion::operator const XMVECTOR() const
+inline Quaternion::operator XMVECTOR() const
 {
 	return XMLoadFloat4( reinterpret_cast<const XMFLOAT4*>( this ) );
 }

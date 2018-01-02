@@ -19,8 +19,6 @@ ClCompile:
   FloatingPointModel: Fast
   AdditionalIncludeDirectories:
   - .
-  PreprocessorDefinitions:
-  - CCPMATH_IMPLEMENT_D3DX_FUNCTIONS=1
 
 Link:
   GenerateDebugInformation: true

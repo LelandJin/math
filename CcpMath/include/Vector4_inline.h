@@ -30,7 +30,7 @@ inline Vector4::Vector4( const XMVECTOR& other )
 }
 
 // --------------------------------------------------------------------------------------
-inline Vector4::operator const XMVECTOR() const
+inline Vector4::operator XMVECTOR() const
 {
 	return XMLoadFloat4( reinterpret_cast<const XMFLOAT4*>( this ) );
 }

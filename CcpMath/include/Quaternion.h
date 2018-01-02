@@ -13,7 +13,7 @@ struct Quaternion
 	Quaternion( const XMVECTOR& other );
 	Quaternion( const Vector4& other );
 
-	operator const XMVECTOR() const;
+	operator XMVECTOR() const;
 
 	Quaternion& operator+=( const Quaternion& other );
 	Quaternion& operator-=( const Quaternion& other );

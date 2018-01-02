@@ -18,7 +18,7 @@ inline Vector2::Vector2( const XMVECTOR& other )
 }
 
 // ----------------------------------------------------------------------------------
-inline Vector2::operator const XMVECTOR() const
+inline Vector2::operator XMVECTOR() const
 {
 	return XMLoadFloat2( reinterpret_cast<const XMFLOAT2*>( this ) );
 }
