@@ -165,11 +165,11 @@ TEST( Quaternion, Multiplication )
 	Quaternion result(37.2999992f, 18.4999981f, -14.0999994f, -6.50000095f);
 
 	Quaternion q5 = q1 * q2;
-	EXPECT_TRUE( q5 == result );
+	EXPECT_QUATERNION_EQ( result, q5 );
 
 	Quaternion q6 = q1;
 	q6 *= q2;
-	EXPECT_TRUE( q6 == result );
+	EXPECT_QUATERNION_EQ( result, q6 );
 }
 
 TEST( Quaternion, QuaternionLength ) 

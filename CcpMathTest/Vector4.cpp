@@ -7,7 +7,16 @@
 #pragma warning(disable: 4723)
 
 
-TEST( Vector4Test, Constructors ) 
+#define EXPECT_VECTOR_EQ( expected, actual )			\
+	{														\
+		EXPECT_FLOAT_EQ( ( expected ).x, ( actual ).x );	\
+		EXPECT_FLOAT_EQ( ( expected ).y, ( actual ).y );	\
+		EXPECT_FLOAT_EQ( ( expected ).z, ( actual ).z );	\
+		EXPECT_FLOAT_EQ( ( expected ).w, ( actual ).w );	\
+	}
+
+
+TEST( Vector4Test, Constructors )
 {
 	Vector4 vec1( 1.f, 2.f, 3.f, 4.f );
 	EXPECT_EQ( 1.f, vec1.x );
@@ -192,7 +201,7 @@ TEST( Vector4Test, Vec4Transform )
 	Vector4 v( 1.f, -2.f, 3.f, 2.f );
 
 	Vector4 r2 = Transform( v, rot );
-	EXPECT_TRUE( result == r2 );
+	EXPECT_VECTOR_EQ( result, r2 );
 }
 
 TEST( Vector4Test, MultiplyByMatrix ) 
@@ -205,5 +214,5 @@ TEST( Vector4Test, MultiplyByMatrix )
 	Vector4 result( 4.9317169f, 2.6718793f, 7.9081745f, 2.0f );
 
 	Vector4 v( 1.f, -2.f, 3.f, 2.f );
-	EXPECT_TRUE( result == v * rot );
+	EXPECT_VECTOR_EQ( result, v * rot );
 }

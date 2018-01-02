@@ -6,6 +6,13 @@
 // disable division by 0 warning: we are doing it on purpose
 #pragma warning(disable: 4723)
 
+#define EXPECT_VECTOR_EQ( expected, actual )			\
+	{														\
+		EXPECT_FLOAT_EQ( ( expected ).x, ( actual ).x );	\
+		EXPECT_FLOAT_EQ( ( expected ).y, ( actual ).y );	\
+		EXPECT_FLOAT_EQ( ( expected ).z, ( actual ).z );	\
+	}
+
 
 TEST( Vector3Test, Constructors ) 
 {
@@ -235,7 +242,7 @@ TEST( Vector3Test, Vec3Transform )
 	Vector3 v( 1.f, -2.f, 3.f );
 	Vector4 r1;
 	Vector4 r2 = Transform( v, rot );
-	EXPECT_TRUE( result == r2 );
+	EXPECT_VECTOR_EQ( result, r2 );
 }
 
 TEST( Vector3Test, Vec3TransformCoord ) 
@@ -250,7 +257,7 @@ TEST( Vector3Test, Vec3TransformCoord )
 	Vector3 v( 1.f, -2.f, 3.f );
 
 	Vector3 r2 = TransformCoord( v, rot );
-	EXPECT_TRUE( result == r2 );
+	EXPECT_VECTOR_EQ( result, r2 );
 }
 
 TEST( Vector3Test, Vec3TransformNormal ) 
@@ -265,7 +272,7 @@ TEST( Vector3Test, Vec3TransformNormal )
 	Vector3 v( 1.f, -2.f, 3.f );
 
 	Vector3 r2 = TransformNormal( v, rot );
-	EXPECT_TRUE( result == r2 );
+	EXPECT_VECTOR_EQ( result, r2 );
 }
 
 TEST( Vector3Test, SphereBoundProbe ) 
