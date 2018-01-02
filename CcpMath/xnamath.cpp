@@ -5,8 +5,7 @@
 // Copyright:	CCP 2013
 //
 
-#ifndef _WIN32
-
+#include "include/Requirements.h"
 #include "include/xnamath.h"
 
 const XMVECTORF32 g_XMSinCoefficients0    = {1.0f, -0.166666667f, 8.333333333e-3f, -1.984126984e-4f};
@@ -155,5 +154,3 @@ _XMMATRIX::_XMMATRIX(const _XMMATRIX& M)
     _44( M._44 )
 {
 }
-
-#endif
