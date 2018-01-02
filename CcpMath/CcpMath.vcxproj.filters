@@ -5,28 +5,58 @@
     <Filter Include="Source Files\include"/>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\CcpMath.h">
+      <Filter>Source Files\include</Filter>
+    </ClInclude>
     <ClInclude Include="include\Color.h">
+      <Filter>Source Files\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Color_inline.h">
       <Filter>Source Files\include</Filter>
     </ClInclude>
     <ClInclude Include="include\Float16.h">
       <Filter>Source Files\include</Filter>
     </ClInclude>
+    <ClInclude Include="include\Float16_inline.h">
+      <Filter>Source Files\include</Filter>
+    </ClInclude>
     <ClInclude Include="include\Matrix.h">
+      <Filter>Source Files\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Matrix_inline.h">
       <Filter>Source Files\include</Filter>
     </ClInclude>
     <ClInclude Include="include\Plane.h">
       <Filter>Source Files\include</Filter>
     </ClInclude>
+    <ClInclude Include="include\Plane_inline.h">
+      <Filter>Source Files\include</Filter>
+    </ClInclude>
     <ClInclude Include="include\Quaternion.h">
+      <Filter>Source Files\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Quaternion_inline.h">
+      <Filter>Source Files\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Requirements.h">
       <Filter>Source Files\include</Filter>
     </ClInclude>
     <ClInclude Include="include\Vector2.h">
       <Filter>Source Files\include</Filter>
     </ClInclude>
+    <ClInclude Include="include\Vector2_inline.h">
+      <Filter>Source Files\include</Filter>
+    </ClInclude>
     <ClInclude Include="include\Vector3.h">
       <Filter>Source Files\include</Filter>
     </ClInclude>
+    <ClInclude Include="include\Vector3_inline.h">
+      <Filter>Source Files\include</Filter>
+    </ClInclude>
     <ClInclude Include="include\Vector4.h">
+      <Filter>Source Files\include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Vector4_inline.h">
       <Filter>Source Files\include</Filter>
     </ClInclude>
     <ClInclude Include="include\xnamath.h">

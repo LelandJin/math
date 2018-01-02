@@ -163,14 +163,24 @@
     <PostBuildEvent/>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="include\CcpMath.h"/>
     <ClInclude Include="include\Color.h"/>
+    <ClInclude Include="include\Color_inline.h"/>
     <ClInclude Include="include\Float16.h"/>
+    <ClInclude Include="include\Float16_inline.h"/>
     <ClInclude Include="include\Matrix.h"/>
+    <ClInclude Include="include\Matrix_inline.h"/>
     <ClInclude Include="include\Plane.h"/>
+    <ClInclude Include="include\Plane_inline.h"/>
     <ClInclude Include="include\Quaternion.h"/>
+    <ClInclude Include="include\Quaternion_inline.h"/>
+    <ClInclude Include="include\Requirements.h"/>
     <ClInclude Include="include\Vector2.h"/>
+    <ClInclude Include="include\Vector2_inline.h"/>
     <ClInclude Include="include\Vector3.h"/>
+    <ClInclude Include="include\Vector3_inline.h"/>
     <ClInclude Include="include\Vector4.h"/>
+    <ClInclude Include="include\Vector4_inline.h"/>
     <ClInclude Include="include\xnamath.h"/>
   </ItemGroup>
   <ItemGroup>
