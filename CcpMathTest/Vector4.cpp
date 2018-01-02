@@ -1,13 +1,11 @@
 #include "CcpFloat.h"
 #include "gtest/gtest.h"
-#ifdef _WIN32
-#include <Windows.h>
-#endif
-#include <cstdint>
-#include <cfloat>
-#include "CcpMath/include/Vector4.h"
-#include "CcpMath/include/Vector3.h"
-#include "CcpMath/include/Matrix.h"
+#define CCP_MATH_USE_OWN_XNA_MATH
+#include "CcpMath/include/CcpMath.h"
+
+// disable division by 0 warning: we are doing it on purpose
+#pragma warning(disable: 4723)
+
 
 TEST( Vector4Test, Constructors ) 
 {
@@ -22,13 +20,6 @@ TEST( Vector4Test, Constructors )
 	EXPECT_EQ( 2.f, vec2.y );
 	EXPECT_EQ( 3.f, vec2.z );
 	EXPECT_EQ( 4.f, vec2.w );
-
-	float args[] = { 1.f, 2.f, 3.f, 4.f };
-	Vector4 vec3( args );
-	EXPECT_EQ( 1.f, vec3.x );
-	EXPECT_EQ( 2.f, vec3.y );
-	EXPECT_EQ( 3.f, vec3.z );
-	EXPECT_EQ( 4.f, vec3.w );
 
 	Vector3 xyz( 1.0f, 2.0f, 3.0f );
 	Vector4 vec4( xyz, 4.0f );
@@ -186,57 +177,7 @@ TEST( Vector4Test, DotProduct )
 {
 	Vector4 a( 1.f, 2.f, 3.f, 4.f );
 	Vector4 b( 4.f, 5.f, 6.f, 7.f );
-	EXPECT_EQ( 60.f, CcpMath::Vec4Dot( a, b ) );
-	EXPECT_EQ( 60.f, D3DXVec4Dot( &a, &b ) );
-}
-
-TEST( Vector4Test, Vec4Add ) 
-{
-	Vector4 a( 1.f, 2.f, 3.f, 4.f );
-	Vector4 b( 2.f, 3.f, 4.f, 5.f );
-
-	Vector4 c;
-	EXPECT_EQ( &c, &CcpMath::Vec4Add( c, a, b ) );
-	EXPECT_EQ( 3.f, c.x );
-	EXPECT_EQ( 5.f, c.y );
-	EXPECT_EQ( 7.f, c.z );
-	EXPECT_EQ( 9.f, c.w );
-
-	c = CcpMath::Vec4Add( a, b );
-	EXPECT_EQ( 3.f, c.x );
-	EXPECT_EQ( 5.f, c.y );
-	EXPECT_EQ( 7.f, c.z );
-	EXPECT_EQ( 9.f, c.w );
-
-	EXPECT_EQ( &c, D3DXVec4Add( &c, &a, &b ) );
-	EXPECT_EQ( 3.f, c.x );
-	EXPECT_EQ( 5.f, c.y );
-	EXPECT_EQ( 7.f, c.z );
-	EXPECT_EQ( 9.f, c.w );
-}
-
-TEST( Vector4Test, Vec4Scale ) 
-{
-	Vector4 a( 1.f, 2.f, 3.f, 4.f );
-	Vector4 b;
-
-	EXPECT_EQ( &b, &CcpMath::Vec4Scale( b, a, 0.5f ) );
-	EXPECT_EQ( 0.5f, b.x );
-	EXPECT_EQ( 1.f, b.y );
-	EXPECT_EQ( 1.5f, b.z );
-	EXPECT_EQ( 2.f, b.w );
-
-	b = CcpMath::Vec4Scale( a, 0.5f );
-	EXPECT_EQ( 0.5f, b.x );
-	EXPECT_EQ( 1.f, b.y );
-	EXPECT_EQ( 1.5f, b.z );
-	EXPECT_EQ( 2.f, b.w );
-
-	EXPECT_EQ( &b, D3DXVec4Scale( &b, &a, 0.5f ) );
-	EXPECT_EQ( 0.5f, b.x );
-	EXPECT_EQ( 1.f, b.y );
-	EXPECT_EQ( 1.5f, b.z );
-	EXPECT_EQ( 2.f, b.w );
+	EXPECT_EQ( 60.f, Dot( a, b ) );
 }
 
 TEST( Vector4Test, Vec4Transform ) 
@@ -249,16 +190,9 @@ TEST( Vector4Test, Vec4Transform )
 	Vector4 result( 4.9317169f, 2.6718793f, 7.9081745f, 2.0f );
 
 	Vector4 v( 1.f, -2.f, 3.f, 2.f );
-	Vector4 r1;
-	EXPECT_EQ( &r1, &CcpMath::Vec4Transform( r1, v, rot ) );
-	EXPECT_TRUE( result == r1 );
 
-	Vector4 r2 = CcpMath::Vec4Transform( v, rot );
+	Vector4 r2 = Transform( v, rot );
 	EXPECT_TRUE( result == r2 );
-
-	Vector4 r3;
-	EXPECT_EQ( &r3, D3DXVec4Transform( &r3, &v, &rot ) );
-	EXPECT_TRUE( result == r3 );
 }
 
 TEST( Vector4Test, MultiplyByMatrix ) 
