@@ -199,7 +199,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
-					.,
 					"../../../carbon/src",
 					"../../../../../../sdk/googletest/1.7.0/include",
 					.,
@@ -215,7 +214,7 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				ONLY_ACTIVE_ARCH = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
@@ -224,8 +223,8 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				LIBRARY_SEARCH_PATHS = (
-					"../../../carbon/autobuild/CcpMath/MacOsX$(ARCHS)/clang4.2/",
 					"../../../../../../sdk/googletest/1.7.0/lib/MacOsX$(ARCHS)",
+					"../../../carbon/autobuild/CcpMath/MacOsX$(ARCHS)/clang4.2/",
 					);
 				SYMROOT = "../../autobuild/CcpMathTest/MacOsX$(ARCHS)/clang4.2";
 				OBJROOT = "../temp/CcpMathTest/MacOsX$(ARCHS)/$(CONFIGURATION)/clang4.2";
@@ -233,14 +232,14 @@
 				CONFIGURATION_TEMP_DIR = "../temp/CcpMathTest/MacOsX$(ARCHS)/$(CONFIGURATION)/clang4.2";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					_DEBUG,
-					"CCPMATH_IMPLEMENT_D3DX_FUNCTIONS=1",
 					"$(inherited)",
 					);
 				COPY_PHASE_STRIP = NO;
 				CLANG_CXX_LIBRARY = "libc++";
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				SDKROOT = macosx;
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				WARNING_CFLAGS = "-Wno-nonportable-include-path -Wno-inconsistent-missing-override";
 				};
 			name = Release;
 			};
@@ -291,7 +290,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
-					.,
 					"../../../carbon/src",
 					"../../../../../../sdk/googletest/1.7.0/include",
 					.,
@@ -308,7 +306,7 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				GCC_OPTIMIZATION_LEVEL = s;
 				ONLY_ACTIVE_ARCH = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
@@ -317,23 +315,23 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				LIBRARY_SEARCH_PATHS = (
-					"../../../carbon/autobuild/CcpMath/MacOsX$(ARCHS)/clang4.2/",
 					"../../../../../../sdk/googletest/1.7.0/lib/MacOsX$(ARCHS)",
+					"../../../carbon/autobuild/CcpMath/MacOsX$(ARCHS)/clang4.2/",
 					);
 				SYMROOT = "../../autobuild/CcpMathTest/MacOsX$(ARCHS)/clang4.2";
 				OBJROOT = "../temp/CcpMathTest/MacOsX$(ARCHS)/$(CONFIGURATION)/clang4.2";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				CONFIGURATION_TEMP_DIR = "../temp/CcpMathTest/MacOsX$(ARCHS)/$(CONFIGURATION)/clang4.2";
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"CCPMATH_IMPLEMENT_D3DX_FUNCTIONS=1",
 					"$(inherited)",
 					);
 				COPY_PHASE_STRIP = NO;
 				CLANG_CXX_LIBRARY = "libc++";
 				GCC_INSTRUMENT_PROGRAM_FLOW_ARCS = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				SDKROOT = macosx;
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				WARNING_CFLAGS = "-Wno-nonportable-include-path -Wno-inconsistent-missing-override";
 				};
 			name = Release;
 			};
@@ -384,7 +382,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
-					.,
 					"../../../carbon/src",
 					"../../../../../../sdk/googletest/1.7.0/include",
 					.,
@@ -400,7 +397,7 @@
 				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/";
-				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				GCC_OPTIMIZATION_LEVEL = s;
 				ONLY_ACTIVE_ARCH = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
@@ -409,22 +406,22 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				LIBRARY_SEARCH_PATHS = (
-					"../../../carbon/autobuild/CcpMath/MacOsX$(ARCHS)/clang4.2/",
 					"../../../../../../sdk/googletest/1.7.0/lib/MacOsX$(ARCHS)",
+					"../../../carbon/autobuild/CcpMath/MacOsX$(ARCHS)/clang4.2/",
 					);
 				SYMROOT = "../../autobuild/CcpMathTest/MacOsX$(ARCHS)/clang4.2";
 				OBJROOT = "../temp/CcpMathTest/MacOsX$(ARCHS)/$(CONFIGURATION)/clang4.2";
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				CONFIGURATION_TEMP_DIR = "../temp/CcpMathTest/MacOsX$(ARCHS)/$(CONFIGURATION)/clang4.2";
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"CCPMATH_IMPLEMENT_D3DX_FUNCTIONS=1",
 					"$(inherited)",
 					);
 				COPY_PHASE_STRIP = NO;
 				CLANG_CXX_LIBRARY = "libc++";
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				SDKROOT = macosx;
-				ALWAYS_SEARCH_USER_PATHS = NO;
+				WARNING_CFLAGS = "-Wno-nonportable-include-path -Wno-inconsistent-missing-override";
 				};
 			name = Release;
 			};
@@ -500,12 +497,11 @@
 			isa = PBXGroup;
 			sourceTree = "<group>";
 			children = (
-				00000018000067aea56c3b7a,
-				0000001C000067aea56c3b7a,
+				0000001E000067aea56c3b7a,
+				00000016000067aea56c3b7a,
 				00000018000067aea56c3b7a,
 				0000001A000067aea56c3b7a,
-				00000016000067aea56c3b7a,
-				0000001E000067aea56c3b7a,
+				0000001C000067aea56c3b7a,
 				);
 			name = Dependencies;
 			};
