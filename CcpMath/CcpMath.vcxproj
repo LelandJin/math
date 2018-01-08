@@ -18,7 +18,9 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <PropertyGroup Label="Globals"/>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{cc619071-7b91-51b1-b16d-b63632b9879f}</ProjectGuid>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
@@ -31,7 +33,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <PlatformToolset>v100</PlatformToolset>
   </PropertyGroup>
-  <Import Project="$(VCTargetsPath)/Microsoft.Cpp.Default.props"/>
+  <Import Project="$(VCTargetsPath)/Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetExt>.lib</TargetExt>
     <OutDir>../../autobuild/CcpMath/$(Platform)/$(PlatformToolset)/</OutDir>
@@ -60,12 +62,12 @@
     <UseOfMfc>False</UseOfMfc>
     <ConfigurationType>StaticLibrary</ConfigurationType>
   </PropertyGroup>
-  <Import Project="$(VCTargetsPath)/Microsoft.Cpp.props"/>
-  <ImportGroup Label="ExtensionSettings"/>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets"/>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets"/>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets"/>
-  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets"/>
+  <Import Project="$(VCTargetsPath)/Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets" />
   <PropertyGroup>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">CcpMath</TargetName>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CcpMath_d</TargetName>
@@ -88,11 +90,11 @@
     <Link>
       <GenerateDebugInformation>True</GenerateDebugInformation>
     </Link>
-    <ResourceCompile/>
-    <Manifest/>
-    <PreBuildEvent/>
-    <PreLinkEvent/>
-    <PostBuildEvent/>
+    <ResourceCompile />
+    <Manifest />
+    <PreBuildEvent />
+    <PreLinkEvent />
+    <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -111,11 +113,11 @@
     <Link>
       <GenerateDebugInformation>True</GenerateDebugInformation>
     </Link>
-    <ResourceCompile/>
-    <Manifest/>
-    <PreBuildEvent/>
-    <PreLinkEvent/>
-    <PostBuildEvent/>
+    <ResourceCompile />
+    <Manifest />
+    <PreBuildEvent />
+    <PreLinkEvent />
+    <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -134,11 +136,11 @@
     <Link>
       <GenerateDebugInformation>True</GenerateDebugInformation>
     </Link>
-    <ResourceCompile/>
-    <Manifest/>
-    <PreBuildEvent/>
-    <PreLinkEvent/>
-    <PostBuildEvent/>
+    <ResourceCompile />
+    <Manifest />
+    <PreBuildEvent />
+    <PreLinkEvent />
+    <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -156,45 +158,45 @@
     <Link>
       <GenerateDebugInformation>True</GenerateDebugInformation>
     </Link>
-    <ResourceCompile/>
-    <Manifest/>
-    <PreBuildEvent/>
-    <PreLinkEvent/>
-    <PostBuildEvent/>
+    <ResourceCompile />
+    <Manifest />
+    <PreBuildEvent />
+    <PreLinkEvent />
+    <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="include\CcpMath.h"/>
-    <ClInclude Include="include\Color.h"/>
-    <ClInclude Include="include\Color_inline.h"/>
-    <ClInclude Include="include\Float16.h"/>
-    <ClInclude Include="include\Float16_inline.h"/>
-    <ClInclude Include="include\Matrix.h"/>
-    <ClInclude Include="include\Matrix_inline.h"/>
-    <ClInclude Include="include\Plane.h"/>
-    <ClInclude Include="include\Plane_inline.h"/>
-    <ClInclude Include="include\Quaternion.h"/>
-    <ClInclude Include="include\Quaternion_inline.h"/>
-    <ClInclude Include="include\Requirements.h"/>
-    <ClInclude Include="include\Vector2.h"/>
-    <ClInclude Include="include\Vector2_inline.h"/>
-    <ClInclude Include="include\Vector3.h"/>
-    <ClInclude Include="include\Vector3_inline.h"/>
-    <ClInclude Include="include\Vector4.h"/>
-    <ClInclude Include="include\Vector4_inline.h"/>
-    <ClInclude Include="include\xnamath.h"/>
+    <ClInclude Include="include\CcpMath.h" />
+    <ClInclude Include="include\Color.h" />
+    <ClInclude Include="include\Color_inline.h" />
+    <ClInclude Include="include\Float16.h" />
+    <ClInclude Include="include\Float16_inline.h" />
+    <ClInclude Include="include\Matrix.h" />
+    <ClInclude Include="include\Matrix_inline.h" />
+    <ClInclude Include="include\Plane.h" />
+    <ClInclude Include="include\Plane_inline.h" />
+    <ClInclude Include="include\Quaternion.h" />
+    <ClInclude Include="include\Quaternion_inline.h" />
+    <ClInclude Include="include\Requirements.h" />
+    <ClInclude Include="include\Vector2.h" />
+    <ClInclude Include="include\Vector2_inline.h" />
+    <ClInclude Include="include\Vector3.h" />
+    <ClInclude Include="include\Vector3_inline.h" />
+    <ClInclude Include="include\Vector4.h" />
+    <ClInclude Include="include\Vector4_inline.h" />
+    <ClInclude Include="include\xnamath.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Color.cpp"/>
-    <ClCompile Include="Float16.cpp"/>
-    <ClCompile Include="Matrix.cpp"/>
-    <ClCompile Include="Plane.cpp"/>
-    <ClCompile Include="Quaternion.cpp"/>
-    <ClCompile Include="Vector2.cpp"/>
-    <ClCompile Include="Vector3.cpp"/>
-    <ClCompile Include="Vector4.cpp"/>
-    <ClCompile Include="xnamath.cpp"/>
+    <ClCompile Include="Color.cpp" />
+    <ClCompile Include="Float16.cpp" />
+    <ClCompile Include="Matrix.cpp" />
+    <ClCompile Include="Plane.cpp" />
+    <ClCompile Include="Quaternion.cpp" />
+    <ClCompile Include="Vector2.cpp" />
+    <ClCompile Include="Vector3.cpp" />
+    <ClCompile Include="Vector4.cpp" />
+    <ClCompile Include="xnamath.cpp" />
   </ItemGroup>
-  <ItemGroup/>
-  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets"/>
-  <ImportGroup Label="ExtensionTargets"/>
+  <ItemGroup />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
 </Project>
