@@ -263,5 +263,5 @@ inline Quaternion Slerp( const Quaternion& q1, const Quaternion& q2, float t )
 // --------------------------------------------------------------------------------------
 inline std::pair<Vector3, float> GetAxisAngle( const Quaternion& q )
 {
-	return std::make_pair( Vector3( q.x, q.y, q.z ), acos( q.w ) );
+	return std::make_pair( Vector3( q.x, q.y, q.z ), acos( q.w ) * 2 );
 }

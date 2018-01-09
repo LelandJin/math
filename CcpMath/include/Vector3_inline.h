@@ -176,7 +176,11 @@ inline float Length( const Vector3& v )
 inline Vector3 Normalize( const Vector3& v )
 {
 	auto length = Length( v );
-	return v / length;
+	if( length )
+	{
+		length = 1 / length;
+	}
+	return v * length;
 }
 
 // --------------------------------------------------------------------------------------
