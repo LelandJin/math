@@ -202,7 +202,7 @@ TEST( Quaternion, QuaternionToAxisAngle )
 {
 	Quaternion q1( 0.18257418274879456f, 0.3651483654975891f, 0.5477225184440613f, 0.7302967309951782f );
 	Vector3 axis( 0.18257418274879456f, 0.3651483654975891f, 0.5477225184440613f );
-	float angle( 0.7520401072636285f );
+	float angle( 1.50408018f );
 
 	auto result = GetAxisAngle( q1 );
 	EXPECT_EQ( axis, result.first );
