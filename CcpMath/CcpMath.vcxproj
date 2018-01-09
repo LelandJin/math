@@ -165,6 +165,7 @@
     <PostBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="autoversion.h" />
     <ClInclude Include="include\CcpMath.h" />
     <ClInclude Include="include\Color.h" />
     <ClInclude Include="include\Color_inline.h" />
