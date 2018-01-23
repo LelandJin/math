@@ -62,31 +62,7 @@ bool Inverse( Matrix& out, float& det, const Matrix& m )
 	}
 	else
 	{
-		for( int i = 0; i < 4; i++ )
-		{
-			float signedDet = ( i & 1 ) ? -1.f : 1.f;
-			signedDet /= det;
-			for( int j = 0; j < 4; j++ )
-			{
-				if( j != i )
-				{
-					int a = j;
-					if( j > i )
-					{
-						a = a - 1;
-					}
-					vec[a].x = m.m[j][0];
-					vec[a].y = m.m[j][1];
-					vec[a].z = m.m[j][2];
-					vec[a].w = m.m[j][3];
-				}
-			}
-			v = Cross( vec[0], vec[1], vec[2] );
-			out.m[0][i] = signedDet * v.x;
-			out.m[1][i] = signedDet * v.y;
-			out.m[2][i] = signedDet * v.z;
-			out.m[3][i] = signedDet * v.w;
-		}
+		out = Inverse( m );
 	}
 	return true;
 }
