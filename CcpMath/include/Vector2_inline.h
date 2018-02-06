@@ -159,6 +159,10 @@ inline float Length( const Vector2& v )
 // ----------------------------------------------------------------------------------
 inline Vector2 Normalize( const Vector2& v )
 {
-	float l = 1.f / sqrt( v.x * v.x + v.y * v.y );
-	return Vector2( v.x * l, v.y * l );
+	auto length = Length( v );
+	if( length )
+	{
+		length = 1 / length;
+	}
+	return Vector2( v.x * length, v.y * length );
 }
