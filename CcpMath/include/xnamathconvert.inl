@@ -2251,7 +2251,7 @@ XMFINLINE XMVECTOR XMLoadXDec4
     XMASSERT((pSource->v & 0x3FF) != 0x200);
     XMASSERT(((pSource->v >> 10) & 0x3FF) != 0x200);
     XMASSERT(((pSource->v >> 20) & 0x3FF) != 0x200);
-    static const XMVECTORI32 XDec4Xor = {0x200, 0x200<<10, 0x200<<20, 0x80000000};
+    static const XMVECTORI32 XDec4Xor = {0x200, 0x200<<10, 0x200<<20, (INT)0x80000000};
     static const XMVECTORF32 XDec4Add = {-512.0f,-512.0f*1024.0f,-512.0f*1024.0f*1024.0f,32768*65536.0f};
     XMASSERT(pSource);
     // Splat the color in all four entries
@@ -4520,7 +4520,7 @@ XMFINLINE VOID XMStoreXIcoN4
     // Note: Masks are x,w,y and z
     static const XMVECTORF32 MinXIcoN4 = {-1.0f, 0.0f,-1.0f,-1.0f};
     static const XMVECTORF32 ScaleXIcoN4 = {524287.0f,15.0f*4096.0f*65536.0f*0.5f,524287.0f*4096.0f,524287.0f};
-    static const XMVECTORI32 MaskXIcoN4 = {0xFFFFF,0xF<<((60-32)-1),0xFFFFF000,0xFFFFF};
+    static const XMVECTORI32 MaskXIcoN4 = {0xFFFFF,0xF<<((60-32)-1),(INT)0xFFFFF000,0xFFFFF};
 
     // Clamp to bounds
     XMVECTOR vResult = _mm_shuffle_ps(V,V,_MM_SHUFFLE(2,1,3,0));
@@ -4574,7 +4574,7 @@ XMFINLINE VOID XMStoreXIco4
     static const XMVECTORF32 MinXIco4 = {-524287.0f, 0.0f,-524287.0f,-524287.0f};
     static const XMVECTORF32 MaxXIco4 = { 524287.0f,15.0f, 524287.0f, 524287.0f};
     static const XMVECTORF32 ScaleXIco4 = {1.0f,4096.0f*65536.0f*0.5f,4096.0f,1.0f};
-    static const XMVECTORI32 MaskXIco4 = {0xFFFFF,0xF<<((60-1)-32),0xFFFFF000,0xFFFFF};
+    static const XMVECTORI32 MaskXIco4 = {0xFFFFF,0xF<<((60-1)-32),(INT)0xFFFFF000,0xFFFFF};
     // Clamp to bounds
     XMVECTOR vResult = _mm_shuffle_ps(V,V,_MM_SHUFFLE(2,1,3,0));
     vResult = _mm_max_ps(vResult,MinXIco4);
@@ -4636,7 +4636,7 @@ XMFINLINE VOID XMStoreUIcoN4
     XMASSERT(pDestination);
     // Note: Masks are x,w,y and z
     static const XMVECTORF32 ScaleUIcoN4 = {1048575.0f,15.0f*4096.0f*65536.0f,1048575.0f*4096.0f,1048575.0f};
-    static const XMVECTORI32 MaskUIcoN4 = {0xFFFFF,0xF<<(60-32),0xFFFFF000,0xFFFFF};
+    static const XMVECTORI32 MaskUIcoN4 = {0xFFFFF,0xF<<(60-32),(INT)0xFFFFF000,0xFFFFF};
     static const XMVECTORF32 AddUIcoN4 = {0.0f,-32768.0f*65536.0f,-32768.0f*65536.0f,0.0f};
     // Clamp to bounds
     XMVECTOR vResult = _mm_shuffle_ps(V,V,_MM_SHUFFLE(2,1,3,0));
@@ -4704,7 +4704,7 @@ XMFINLINE VOID XMStoreUIco4
     // Note: Masks are x,w,y and z
     static const XMVECTORF32 MaxUIco4 = { 1048575.0f, 15.0f, 1048575.0f, 1048575.0f};
     static const XMVECTORF32 ScaleUIco4 = {1.0f,4096.0f*65536.0f,4096.0f,1.0f};
-    static const XMVECTORI32 MaskUIco4 = {0xFFFFF,0xF<<(60-32),0xFFFFF000,0xFFFFF};
+    static const XMVECTORI32 MaskUIco4 = {0xFFFFF,0xF<<(60-32),(INT)0xFFFFF000,0xFFFFF};
     static const XMVECTORF32 AddUIco4 = {0.0f,-32768.0f*65536.0f,-32768.0f*65536.0f,0.0f};
     // Clamp to bounds
     XMVECTOR vResult = _mm_shuffle_ps(V,V,_MM_SHUFFLE(2,1,3,0));
@@ -4767,7 +4767,7 @@ XMFINLINE VOID XMStoreIcoN4
     XMASSERT(pDestination);
     // Note: Masks are x,w,y and z
     static const XMVECTORF32 ScaleIcoN4 = {524287.0f,7.0f*4096.0f*65536.0f,524287.0f*4096.0f,524287.0f};
-    static const XMVECTORI32 MaskIcoN4 = {0xFFFFF,0xF<<(60-32),0xFFFFF000,0xFFFFF};
+    static const XMVECTORI32 MaskIcoN4 = {0xFFFFF,0xF<<(60-32),(INT)0xFFFFF000,0xFFFFF};
     // Clamp to bounds
     XMVECTOR vResult = _mm_shuffle_ps(V,V,_MM_SHUFFLE(2,1,3,0));
     vResult = _mm_max_ps(vResult,g_XMNegativeOne);
@@ -4829,7 +4829,7 @@ XMFINLINE VOID XMStoreIco4
     static const XMVECTORF32 MinIco4 = {-524287.0f,-7.0f,-524287.0f,-524287.0f};
     static const XMVECTORF32 MaxIco4 = { 524287.0f, 7.0f, 524287.0f, 524287.0f};
     static const XMVECTORF32 ScaleIco4 = {1.0f,4096.0f*65536.0f,4096.0f,1.0f};
-    static const XMVECTORI32 MaskIco4 = {0xFFFFF,0xF<<(60-32),0xFFFFF000,0xFFFFF};
+    static const XMVECTORI32 MaskIco4 = {0xFFFFF,0xF<<(60-32),(INT)0xFFFFF000,0xFFFFF};
     // Clamp to bounds
     XMVECTOR vResult = _mm_shuffle_ps(V,V,_MM_SHUFFLE(2,1,3,0));
     vResult = _mm_max_ps(vResult,MinIco4);

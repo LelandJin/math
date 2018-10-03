@@ -515,8 +515,8 @@ XMINLINE XMVECTOR XMQuaternionSlerpV
     XMVECTOR Result;
     XMVECTOR Zero;
     static const XMVECTORF32 OneMinusEpsilon = {1.0f - 0.00001f, 1.0f - 0.00001f, 1.0f - 0.00001f, 1.0f - 0.00001f};
-    static const XMVECTORI32 SignMask2 = {0x80000000,0x00000000,0x00000000,0x00000000};
-    static const XMVECTORI32 MaskXY = {0xFFFFFFFF,0xFFFFFFFF,0x00000000,0x00000000};
+    static const XMVECTORI32 SignMask2 = {(INT)0x80000000,0x00000000,0x00000000,0x00000000};
+    static const XMVECTORI32 MaskXY = {(INT)0xFFFFFFFF,(INT)0xFFFFFFFF,0x00000000,0x00000000};
 
     XMASSERT((XMVectorGetY(T) == XMVectorGetX(T)) && (XMVectorGetZ(T) == XMVectorGetX(T)) && (XMVectorGetW(T) == XMVectorGetX(T)));
 
