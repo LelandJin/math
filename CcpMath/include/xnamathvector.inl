@@ -1266,7 +1266,7 @@ XMFINLINE XMVECTOR XMVectorPermute
 #elif defined(_XM_SSE_INTRINSICS_)
 #if defined(_PREFAST_) || defined(XMDEBUG)
     // Indices must be in range from 0 to 31
-    static const XMVECTORI32 PremuteTest = {0xE0E0E0E0,0xE0E0E0E0,0xE0E0E0E0,0xE0E0E0E0};
+    static const XMVECTORI32 PremuteTest = {(INT)0xE0E0E0E0,(INT)0xE0E0E0E0,(INT)0xE0E0E0E0,(INT)0xE0E0E0E0};
     XMVECTOR vAssert = _mm_and_ps(Control,PremuteTest);
     __m128i vAsserti = _mm_cmpeq_epi32(reinterpret_cast<const __m128i *>(&vAssert)[0],g_XMZero);
     XMASSERT(_mm_movemask_ps(*reinterpret_cast<const __m128 *>(&vAsserti)) == 0xf);
