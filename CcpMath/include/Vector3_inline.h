@@ -245,3 +245,16 @@ inline bool SphereBoundProbe(
 	float d = b * b - a * c;
 	return !( ( d <= 0.0f ) || ( 2.0f * sqrt( d ) <= b ) );
 }
+
+inline float AngleFromNonNormalized( const Vector3& v1NonNormalized, const Vector3& v2NonNormalized)
+{
+	float dot = Dot( v1NonNormalized, v2NonNormalized );
+	float len1 = Length( v1NonNormalized );
+	float len2 = Length( v2NonNormalized );
+	return acos( dot / (len1*len2) );
+}
+
+inline float AngleFromNormalized( const Vector3& v1Normalized, const Vector3& v2Normalized )
+{
+	return acos( Dot( v1Normalized, v2Normalized ) );
+}
