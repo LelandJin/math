@@ -249,9 +249,13 @@ inline bool SphereBoundProbe(
 inline float AngleFromNonNormalized( const Vector3& v1NonNormalized, const Vector3& v2NonNormalized)
 {
 	float dot = Dot( v1NonNormalized, v2NonNormalized );
-	float len1 = Length( v1NonNormalized );
-	float len2 = Length( v2NonNormalized );
-	return acos( dot / (len1*len2) );
+	float lenTimesLen = Length( v1NonNormalized ) * Length( v2NonNormalized );
+	if ( lenTimesLen == 0 )
+	{
+		lenTimesLen = 1;
+		CCP_LOGERR( "Vector3_inline::Division by zero in AngleFromNonNormalized" );
+	}
+	return acos( dot / ( lenTimesLen ) );
 }
 
 inline float AngleFromNormalized( const Vector3& v1Normalized, const Vector3& v2Normalized )
