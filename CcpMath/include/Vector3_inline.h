@@ -253,7 +253,6 @@ inline float AngleFromNonNormalized( const Vector3& v1NonNormalized, const Vecto
 	if ( lenTimesLen == 0 )
 	{
 		lenTimesLen = 1;
-		CCP_LOGERR( "Vector3_inline::Division by zero in AngleFromNonNormalized" );
 	}
 	return acos( dot / ( lenTimesLen ) );
 }
