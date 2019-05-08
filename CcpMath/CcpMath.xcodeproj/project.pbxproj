@@ -96,7 +96,7 @@
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				CONFIGURATION_TEMP_DIR = "../temp/CcpMath/MacOsX$(ARCHS)/$(CONFIGURATION)/clang4.2";
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					_MSC_PLATFORM_TOOLSET_clang4.2,
+					_MSC_PLATFORM_TOOLSET_clang4_2,
 					_DEBUG,
 					"$(inherited)",
 					);
@@ -265,7 +265,7 @@
 				CONFIGURATION_TEMP_DIR = "../temp/CcpMath/MacOsX$(ARCHS)/$(CONFIGURATION)/clang4.2";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					NDEBUG,
-					_MSC_PLATFORM_TOOLSET_clang4.2,
+					_MSC_PLATFORM_TOOLSET_clang4_2,
 					"$(inherited)",
 					);
 				COPY_PHASE_STRIP = NO;
@@ -627,7 +627,7 @@
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				CONFIGURATION_TEMP_DIR = "../temp/CcpMath/MacOsX$(ARCHS)/$(CONFIGURATION)/clang4.2";
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					_MSC_PLATFORM_TOOLSET_clang4.2,
+					_MSC_PLATFORM_TOOLSET_clang4_2,
 					"$(inherited)",
 					);
 				COPY_PHASE_STRIP = NO;
