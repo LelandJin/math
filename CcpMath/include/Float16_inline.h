@@ -20,6 +20,12 @@ inline Float_16::Float_16( float other )
 }
 
 // --------------------------------------------------------------------------------------
+inline Float_16::Float_16( uint16_t other )
+	: m_value( other )
+{
+}
+
+// --------------------------------------------------------------------------------------
 inline Float_16::operator float() const
 {
 	return Float16To32( m_value );

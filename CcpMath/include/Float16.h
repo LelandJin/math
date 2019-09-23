@@ -10,6 +10,7 @@ struct Float_16
 {
 	Float_16();
 	explicit Float_16( float other );
+	explicit Float_16( uint16_t other );
 
 	operator float() const;
 
