@@ -45,7 +45,7 @@ Abstract:
 #define XNAMATH_VERSION 202
 
 #if !defined(_XM_X64_) && !defined(_XM_X86_)
-#if defined(_M_AMD64) || defined(_AMD64_) || defined(__ORBIS__) || defined(__APPLE__)
+#if defined(_M_AMD64) || defined(_AMD64_) || defined(__APPLE__)
 #define _XM_X64_
 #elif defined(_M_IX86) || defined(_X86_) || defined(__ANDROID__)
 #define _XM_X86_
@@ -63,7 +63,7 @@ Abstract:
 #endif
 
 #if defined(_XM_X86_) || defined(_XM_X64_)
-#if defined(__ORBIS__) || defined(__APPLE__) || defined(__ANDROID__)
+#if defined(__APPLE__) || defined(__ANDROID__)
 #define _XM_NO_INTRINSICS_
 #else
 #define _XM_SSE_INTRINSICS_
@@ -120,7 +120,7 @@ Abstract:
 #endif
 
 #if !defined(XMFINLINE)
-#if defined(__ORBIS__) || defined(__APPLE__) || defined(__ANDROID__)
+#if defined(__APPLE__) || defined(__ANDROID__)
 #define XMFINLINE inline
 #else
 #define XMFINLINE __forceinline
@@ -134,7 +134,7 @@ Abstract:
 #endif // !XMDEBUG
 
 #if !defined(XMASSERT)
-#if defined(__ORBIS__) || defined(__APPLE__) || defined(__ANDROID__)
+#if defined(__APPLE__) || defined(__ANDROID__)
 #define XMASSERT(Expression)
 #else
 #if defined(_PREFAST_)

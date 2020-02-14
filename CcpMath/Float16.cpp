@@ -46,7 +46,7 @@ namespace
 		return std::signbit( num );
 	}
 
-#elif !defined( __APPLE__) && !defined(__ORBIS__)
+#elif !defined( __APPLE__)
 
 	bool IsInf( double num )
 	{
