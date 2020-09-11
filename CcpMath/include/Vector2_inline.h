@@ -26,13 +26,13 @@ inline Vector2::operator XMVECTOR() const
 // ----------------------------------------------------------------------------------
 inline float Vector2::operator[]( int32_t index ) const
 {
-	return ( &x )[index];
+	return ( &x )[index]; // cppcheck-suppress objectIndex
 }
 
 // ----------------------------------------------------------------------------------
 inline float& Vector2::operator[]( int32_t index )
 {
-	return ( &x )[index];
+	return ( &x )[index]; // cppcheck-suppress objectIndex
 }
 
 // ----------------------------------------------------------------------------------
