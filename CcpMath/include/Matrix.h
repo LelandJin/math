@@ -1,6 +1,6 @@
 #pragma once
 
-#include "xnamath.h"
+#include "Requirements.h"
 
 
 struct Vector2;

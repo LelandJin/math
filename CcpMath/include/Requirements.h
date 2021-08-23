@@ -13,3 +13,9 @@
 #include <cstdint>
 #include <utility>
 #include <cmath>
+
+#include "DirectXMath.h"
+#include "DirectXPackedVector.h"
+
+using namespace DirectX;
+using namespace DirectX::PackedVector;

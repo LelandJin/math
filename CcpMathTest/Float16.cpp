@@ -7,7 +7,7 @@
 
 #include "CcpFloat.h"
 #include "gtest/gtest.h"
-#include "CcpMath/include/CcpMath.h"
+#include "CcpMath.h"
 #include <limits>
 
 namespace

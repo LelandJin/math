@@ -1,6 +1,6 @@
 #include "CcpFloat.h"
 #include "gtest/gtest.h"
-#include "CcpMath/include/CcpMath.h"
+#include "CcpMath.h"
 
 // disable division by 0 warning: we are doing it on purpose
 #pragma warning(disable: 4723)
@@ -13,7 +13,7 @@
 	}
 
 
-TEST( Vector3Test, Constructors ) 
+TEST( Vector3Test, Constructors )
 {
 	Vector3 vec1( 1.f, 2.f, 3.f );
 	EXPECT_EQ( 1.f, vec1.x );
@@ -26,7 +26,7 @@ TEST( Vector3Test, Constructors )
 	EXPECT_EQ( 3.f, vec2.z );
 }
 
-TEST( Vector3Test, Additions ) 
+TEST( Vector3Test, Additions )
 {
 	Vector3 a( 1.f, 2.f, 3.f );
 	Vector3 b( 4.f, 5.f, 6.f );
@@ -47,7 +47,7 @@ TEST( Vector3Test, Additions )
 	EXPECT_EQ( 24.f, c.z );
 }
 
-TEST( Vector3Test, Subtractions ) 
+TEST( Vector3Test, Subtractions )
 {
 	Vector3 a( 12.f, 23.f, 4.f );
 	Vector3 b( 4.f, 5.f, 6.f );
@@ -62,13 +62,13 @@ TEST( Vector3Test, Subtractions )
 	EXPECT_EQ( 13.f, c.y );
 	EXPECT_EQ( -8.f, c.z );
 
-	a -= a;
-	EXPECT_EQ( 0.f, a.x );
-	EXPECT_EQ( 0.f, a.y );
-	EXPECT_EQ( 0.f, a.z );
+	Vector3 d = a - a;
+	EXPECT_EQ( 0.f, d.x );
+	EXPECT_EQ( 0.f, d.y );
+	EXPECT_EQ( 0.f, d.z );
 }
 
-TEST( Vector3Test, Scaling ) 
+TEST( Vector3Test, Scaling )
 {
 	Vector3 a( 1.f, 2.f, 3.f );
 
@@ -108,7 +108,7 @@ TEST( Vector3Test, Scaling )
 	EXPECT_EQ( 4.5f, d.z );
 }
 
-TEST( Vector3Test, Signs ) 
+TEST( Vector3Test, Signs )
 {
 	Vector3 a( 1.f, 2.f, 3.f );
 
@@ -123,7 +123,7 @@ TEST( Vector3Test, Signs )
 	EXPECT_EQ( -3.f, c.z );
 }
 
-TEST( Vector3Test, Comparisons ) 
+TEST( Vector3Test, Comparisons )
 {
 	EXPECT_TRUE( Vector3( 1.f, 2.f, 3.f ) == Vector3( 1.f, 2.f, 3.f ) );
 	EXPECT_FALSE( Vector3( 1.f, 2.f, 3.f ) == Vector3( 3.f, 2.f, 3.f ) );
@@ -138,20 +138,20 @@ TEST( Vector3Test, Comparisons )
 	EXPECT_TRUE( Vector3( 1.f, 0.f, 3.f ) != Vector3( 1.f, 2.f, 3.f ) );
 }
 
-TEST( Vector3Test, DotProduct ) 
+TEST( Vector3Test, DotProduct )
 {
 	Vector3 a( 1.f, 2.f, 3.f );
 	Vector3 b( 4.f, 5.f, 6.f );
 	EXPECT_EQ( 32.f, Dot( a, b ) );
 }
 
-TEST( Vector3Test, Length ) 
+TEST( Vector3Test, Length )
 {
 	Vector3 a( 1.f, 2.f, 3.f );
 	EXPECT_EQ( sqrtf( 14.f ), Length( a ) );
 }
 
-TEST( Vector3Test, CrossProduct ) 
+TEST( Vector3Test, CrossProduct )
 {
 	Vector3 a( 1.f, 2.f, 3.f );
 	Vector3 b( 2.f, 3.f, 4.f );
@@ -162,7 +162,7 @@ TEST( Vector3Test, CrossProduct )
 	EXPECT_EQ( -1.f, c.z );
 }
 
-TEST( Vector3Test, Vec3Minimize ) 
+TEST( Vector3Test, Vec3Minimize )
 {
 	Vector3 a( 14.f, 2.f, 53.f );
 	Vector3 b( 3.f, 32.f, 4.f );
@@ -174,7 +174,7 @@ TEST( Vector3Test, Vec3Minimize )
 	EXPECT_EQ( 4.f, c.z );
 }
 
-TEST( Vector3Test, Vec3Maximize ) 
+TEST( Vector3Test, Vec3Maximize )
 {
 	Vector3 a( 14.f, 2.f, 53.f );
 	Vector3 b( 3.f, 32.f, 4.f );
@@ -186,7 +186,7 @@ TEST( Vector3Test, Vec3Maximize )
 	EXPECT_EQ( 53.f, c.z );
 }
 
-TEST( Vector3Test, Vec3Lerp ) 
+TEST( Vector3Test, Vec3Lerp )
 {
 	Vector3 a( 1.f, 2.f, 3.f );
 	Vector3 b( 2.f, 10.f, 14.f );
@@ -204,18 +204,18 @@ TEST( Vector3Test, Vec3Lerp )
 
 }
 
-TEST( Vector3Test, Normalize ) 
+TEST( Vector3Test, Normalize )
 {
 	Vector3 a( 1.f, 2.f, 3.f );
 	float l = sqrt( a.x * a.x + a.y * a.y + a.z * a.z );
 	Vector3 b;
 	b = Normalize( a );
-	EXPECT_EQ( a.x / l, b.x );
-	EXPECT_EQ( a.y / l, b.y );
-	EXPECT_EQ( a.z / l, b.z );
+	EXPECT_FLOAT_EQ( a.x / l, b.x );
+	EXPECT_FLOAT_EQ( a.y / l, b.y );
+	EXPECT_FLOAT_EQ( a.z / l, b.z );
 }
 
-TEST( Vector3Test, Vec3Hermite ) 
+TEST( Vector3Test, Vec3Hermite )
 {
 	Vector3 v0( 1.f, 2.f, 3.f );
 	Vector3 v1( 4.f, 5.f, 6.f );
@@ -229,12 +229,12 @@ TEST( Vector3Test, Vec3Hermite )
 	EXPECT_TRUE( c == v1 );
 }
 
-TEST( Vector3Test, Vec3Transform ) 
+TEST( Vector3Test, Vec3Transform )
 {
 	Matrix rot(
-		0.7816392183303833f, 0.5501171946525574f, -0.2939578592777252f, 0.0f, 
-		-0.4829292893409729f, 0.832030177116394f, 0.27295631170272827f, 0.0f, 
-		0.3947397768497467f, -0.07139250636100769f, 0.9160150289535522f, 0.0f, 
+		0.7816392183303833f, 0.5501171946525574f, -0.2939578592777252f, 0.0f,
+		-0.4829292893409729f, 0.832030177116394f, 0.27295631170272827f, 0.0f,
+		0.3947397768497467f, -0.07139250636100769f, 0.9160150289535522f, 0.0f,
 		1.0f, 2.0f, 3.0f, 1.0f );
 	Vector4 result( 3.93171716f, 0.671879411f, 4.90817451f, 1.0f );
 
@@ -244,12 +244,12 @@ TEST( Vector3Test, Vec3Transform )
 	EXPECT_VECTOR_EQ( result, r2 );
 }
 
-TEST( Vector3Test, Vec3TransformCoord ) 
+TEST( Vector3Test, Vec3TransformCoord )
 {
 	Matrix rot(
-		0.7816392183303833f, 0.5501171946525574f, -0.2939578592777252f, 0.0f, 
-		-0.4829292893409729f, 0.832030177116394f, 0.27295631170272827f, 0.0f, 
-		0.3947397768497467f, -0.07139250636100769f, 0.9160150289535522f, 0.0f, 
+		0.7816392183303833f, 0.5501171946525574f, -0.2939578592777252f, 0.0f,
+		-0.4829292893409729f, 0.832030177116394f, 0.27295631170272827f, 0.0f,
+		0.3947397768497467f, -0.07139250636100769f, 0.9160150289535522f, 0.0f,
 		1.0f, 2.0f, 3.0f, 1.0f );
 	Vector3 result( 3.93171716f, 0.671879411f, 4.90817451f );
 
@@ -259,12 +259,12 @@ TEST( Vector3Test, Vec3TransformCoord )
 	EXPECT_VECTOR_EQ( result, r2 );
 }
 
-TEST( Vector3Test, Vec3TransformNormal ) 
+TEST( Vector3Test, Vec3TransformNormal )
 {
 	Matrix rot(
-		0.7816392183303833f, 0.5501171946525574f, -0.2939578592777252f, 0.0f, 
-		-0.4829292893409729f, 0.832030177116394f, 0.27295631170272827f, 0.0f, 
-		0.3947397768497467f, -0.07139250636100769f, 0.9160150289535522f, 0.0f, 
+		0.7816392183303833f, 0.5501171946525574f, -0.2939578592777252f, 0.0f,
+		-0.4829292893409729f, 0.832030177116394f, 0.27295631170272827f, 0.0f,
+		0.3947397768497467f, -0.07139250636100769f, 0.9160150289535522f, 0.0f,
 		1.0f, 2.0f, 3.0f, 1.0f );
 	Vector3 result( 2.93171716f, -1.32812059f, 1.90817451f );
 
@@ -274,7 +274,7 @@ TEST( Vector3Test, Vec3TransformNormal )
 	EXPECT_VECTOR_EQ( result, r2 );
 }
 
-TEST( Vector3Test, SphereBoundProbe ) 
+TEST( Vector3Test, SphereBoundProbe )
 {
 	float radius;
 	Vector3 center, rayDirection, rayPosition;
@@ -295,7 +295,7 @@ TEST( Vector3Test, SphereBoundProbe )
 	EXPECT_FALSE( SphereBoundProbe( center, radius, rayPosition, rayDirection ) );
 }
 
-TEST( Vector3Test, ComputeBoundingSphere ) 
+TEST( Vector3Test, ComputeBoundingSphere )
 {
 	struct TestStream
 	{

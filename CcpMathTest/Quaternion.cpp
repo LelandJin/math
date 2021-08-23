@@ -1,6 +1,6 @@
 #include "CcpFloat.h"
 #include "gtest/gtest.h"
-#include "CcpMath/include/CcpMath.h"
+#include "CcpMath.h"
 
 // disable division by 0 warning: we are doing it on purpose
 #pragma warning(disable: 4723)
@@ -68,12 +68,12 @@ TEST( Quaternion, Subtractions )
 	EXPECT_EQ( 13.f, c.y );
 	EXPECT_EQ( -8.f, c.z );
 	EXPECT_EQ( 31.f, c.w );
-
-	a -= a;
-	EXPECT_EQ( 0.f, a.x );
-	EXPECT_EQ( 0.f, a.y );
-	EXPECT_EQ( 0.f, a.z );
-	EXPECT_EQ( 0.f, a.w );
+	
+	Quaternion d = a - a;
+	EXPECT_EQ( 0.f, d.x );
+	EXPECT_EQ( 0.f, d.y );
+	EXPECT_EQ( 0.f, d.z );
+	EXPECT_EQ( 0.f, d.w );
 }
 
 TEST( Quaternion, Scaling ) 

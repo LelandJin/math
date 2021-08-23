@@ -1,6 +1,6 @@
 #include "CcpFloat.h"
 #include "gtest/gtest.h"
-#include "CcpMath/include/CcpMath.h"
+#include "CcpMath.h"
 
 // disable division by 0 warning: we are doing it on purpose
 #pragma warning(disable: 4723)
@@ -42,7 +42,7 @@ TEST( Matrix, Constructors )
 		31.f, 32.f, 33.f, 34.f,
 		41.f, 42.f, 43.f, 44.f };
 
-	Matrix mat3( elements );
+    Matrix mat3( XMMATRIX{elements} );
 	for( int i = 0; i < 4; ++i )
 	{
 		for( int j = 0; j < 4; ++j )
@@ -123,7 +123,7 @@ TEST( Matrix, Subtractions )
 	{
 		elements[i] = 16.f - float( i );
 	}
-	Matrix mat2( elements );
+    Matrix mat2( XMMATRIX{elements} );
 
 	mat1 -= mat2;
 	for( int i = 0; i < 4; ++i )

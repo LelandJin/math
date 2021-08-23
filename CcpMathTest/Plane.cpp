@@ -1,6 +1,6 @@
 #include "CcpFloat.h"
 #include "gtest/gtest.h"
-#include "CcpMath/include/CcpMath.h"
+#include "CcpMath.h"
 
 // disable division by 0 warning: we are doing it on purpose
 #pragma warning(disable: 4723)

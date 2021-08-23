@@ -1,6 +1,6 @@
 #include "CcpFloat.h"
 #include "gtest/gtest.h"
-#include "CcpMath/include/CcpMath.h"
+#include "CcpMath.h"
 
 // disable division by 0 warning: we are doing it on purpose
 #pragma warning(disable: 4723)
@@ -47,10 +47,10 @@ TEST( Vector2Test, Subtractions )
 	Vector2 c = a - b;
 	EXPECT_EQ( 4.f, c.x );
 	EXPECT_EQ( 13.f, c.y );
-
-	a -= a;
-	EXPECT_EQ( 0.f, a.x );
-	EXPECT_EQ( 0.f, a.y );
+	
+	Vector2 d = a - a;
+	EXPECT_EQ( 0.f, d.x );
+	EXPECT_EQ( 0.f, d.y );
 }
 
 TEST( Vector2Test, Scaling ) 

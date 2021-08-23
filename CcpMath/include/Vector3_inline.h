@@ -175,12 +175,15 @@ inline float Length( const Vector3& v )
 // --------------------------------------------------------------------------------------
 inline Vector3 Normalize( const Vector3& v )
 {
-	auto length = Length( v );
+	// Prevent overflow to +inf for large vectors (due to the required squaring)
+	float max = std::max( std::max( std::abs( v.x ), std::abs( v.y ) ), std::abs( v.z ) );
+	Vector3 minified = v / ( max ? max : 1 );
+	auto length = Length( minified );
 	if( length )
 	{
 		length = 1 / length;
 	}
-	return v * length;
+	return minified * length;
 }
 
 // --------------------------------------------------------------------------------------
