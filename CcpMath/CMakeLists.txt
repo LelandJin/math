@@ -40,4 +40,4 @@ target_include_directories(CcpMath
 
 target_link_libraries(CcpMath PUBLIC DirectXMath)
 
-target_compile_options(CcpMath PRIVATE "/fp:fast")
+target_compile_options(CcpMath PRIVATE "${MATH_OPTIMIZE_FLAG}")
