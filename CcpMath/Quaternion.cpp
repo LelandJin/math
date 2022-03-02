@@ -65,6 +65,8 @@ Quaternion RotationQuaternion( const Matrix& m )
 Quaternion RotationQuaternion( float yaw, float pitch, float roll )
 {
 #if __APPLE__
+	// We need a special case for apple because of a bug that makes XMVectorRound not work
+	// See info here: https://githubhot.com/repo/microsoft/DirectXMath/issues/127
 	float sinYaw = sin( yaw / 2.0f );
 	float cosYaw = cos( yaw / 2.0f );
 	float sinPitch = sin( pitch / 2.0f );
