@@ -64,6 +64,7 @@ Quaternion RotationQuaternion( const Matrix& m )
 // --------------------------------------------------------------------------------------
 Quaternion RotationQuaternion( float yaw, float pitch, float roll )
 {
+#if __APPLE__
 	float sinYaw = sin( yaw / 2.0f );
 	float cosYaw = cos( yaw / 2.0f );
 	float sinPitch = sin( pitch / 2.0f );
@@ -77,4 +78,7 @@ Quaternion RotationQuaternion( float yaw, float pitch, float roll )
 	out.z = cosYaw * cosPitch * sinRoll - sinYaw * sinPitch * cosRoll;
 	out.w = cosYaw * cosPitch * cosRoll + sinYaw * sinPitch * sinRoll;
 	return out;
+#else
+    return Quaternion(XMQuaternionRotationRollPitchYaw(pitch, yaw, roll));
+#endif
 }
