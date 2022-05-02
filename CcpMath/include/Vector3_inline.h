@@ -221,6 +221,12 @@ inline Vector3 Minimize( const Vector3& v1, const Vector3& v2 )
 }
 
 // --------------------------------------------------------------------------------------
+inline Vector3 Abs( const Vector3& v )
+{
+	return Vector3( std::abs( v.x ), std::abs( v.y ), std::abs( v.z ) );
+}
+
+// --------------------------------------------------------------------------------------
 inline Vector3 Hermite( const Vector3& v1, const Vector3& t1, const Vector3& v2, const Vector3& t2, float s )
 {
 	float k3 = 2.f * s * s * s - 3 * s * s + 1;

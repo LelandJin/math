@@ -53,6 +53,7 @@ Vector3 ClampLength( const Vector3& v, float maxLength );
 Vector3 Lerp( const Vector3& v1, const Vector3& v2, float s );
 Vector3 Maximize( const Vector3& v1, const Vector3& v2 );
 Vector3 Minimize( const Vector3& v1, const Vector3& v2 );
+Vector3 Abs( const Vector3& v );
 Vector3 Hermite( const Vector3& v1, const Vector3& t1, const Vector3& v2, const Vector3& t2, float s );
 
 bool SphereBoundProbe(

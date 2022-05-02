@@ -9,3 +9,6 @@
 #include "Plane.h"
 #include "Color.h"
 #include "Float16.h"
+#include "AxisAlignedBox.h"
+#include "Sphere.h"
+#include "Ray.h"
