@@ -20,7 +20,6 @@ void Sphere::Transform( const Matrix& transform )
 	{
 		return;
 	}
-	Vector3 center;
 	// translate center
 	center = TransformCoord( center, transform );
 	// scale with highest scale factor
