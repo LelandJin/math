@@ -8,6 +8,7 @@ struct Matrix;
 namespace CcpMath
 {
 struct Sphere;
+struct AxisAlignedEllipsoid;
 struct Ray;
 
 struct AxisAlignedBox
@@ -15,6 +16,7 @@ struct AxisAlignedBox
 	AxisAlignedBox();
 	AxisAlignedBox( const Vector3& min, const Vector3& max );
 	explicit AxisAlignedBox( const Vector4& sphere );
+	explicit AxisAlignedBox( const AxisAlignedEllipsoid& sphere );
 	explicit AxisAlignedBox( const Sphere& sphere );
 
 	bool IsInitialized() const;

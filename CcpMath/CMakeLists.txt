@@ -14,6 +14,9 @@ target_sources(CcpMath PRIVATE
     Vector4.cpp
     include/AxisAlignedBox.h
     include/AxisAlignedBox_inline.h
+    include/AxisAlignedEllipsoid.h
+    include/AxisAlignedEllipsoid_inline.h
+    include/NumConst.h
     include/CcpMath.h
     include/Color.h
     include/Color_inline.h

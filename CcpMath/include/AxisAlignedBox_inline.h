@@ -1,4 +1,5 @@
 #include "Sphere.h"
+#include "AxisAlignedEllipsoid.h"
 #include "Ray.h"
 #include "Vector4.h"
 
@@ -27,6 +28,13 @@ inline AxisAlignedBox::AxisAlignedBox( const Vector4& sphere ) :
 inline AxisAlignedBox::AxisAlignedBox( const Sphere& sphere ) :
 	m_min( sphere.center.x - sphere.radius, sphere.center.y - sphere.radius, sphere.center.z - sphere.radius ),
 	m_max( sphere.center.x + sphere.radius, sphere.center.y + sphere.radius, sphere.center.z + sphere.radius )
+{
+}
+
+
+inline AxisAlignedBox::AxisAlignedBox( const AxisAlignedEllipsoid& ellipsoid ) :
+	m_min( ellipsoid.center - ellipsoid.radii ),
+	m_max( ellipsoid.center + ellipsoid.radii )
 {
 }
 
