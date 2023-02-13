@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////////
 //
-// Creator:		Filipp Pavlov
+// Creator:		Snorri Sturluson
 // Created:		May 2013
 // Copyright:	CCP 2013
 //
 
-#include "include/Requirements.h"
-#include "include/Plane.h"
+#include "Requirements.h"
+#include "Color.h"

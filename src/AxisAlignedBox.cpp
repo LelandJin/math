@@ -1,5 +1,5 @@
-#include "include/AxisAlignedBox.h"
-#include "include/Matrix.h"
+#include "AxisAlignedBox.h"
+#include "Matrix.h"
 
 namespace CcpMath
 {

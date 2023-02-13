@@ -1,3 +1,5 @@
+find_package(GTest REQUIRED)
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 add_executable(CcpMathTest
     CcpFloat.h
     Color.cpp
@@ -14,4 +16,7 @@ if(APPLE)
     target_link_libraries(CcpMathTest PRIVATE "-framework CoreFoundation")
 endif()
 
+target_compile_definitions(CcpMathTest PRIVATE BLUEBUILD)
+
 set_target_properties(CcpMathTest PROPERTIES FOLDER "Tests")
+gtest_discover_tests(CcpMathTest)

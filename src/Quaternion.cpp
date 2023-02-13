@@ -5,8 +5,8 @@
 // Copyright:	CCP 2013
 //
 
-#include "include/Requirements.h"
-#include "include/Quaternion.h"
+#include "Requirements.h"
+#include "Quaternion.h"
 
 // --------------------------------------------------------------------------------------
 Quaternion RotationQuaternion( const Matrix& m )

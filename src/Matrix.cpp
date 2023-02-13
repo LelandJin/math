@@ -5,8 +5,8 @@
 // Copyright:	CCP 2013
 //
 
-#include "include/Requirements.h"
-#include "include/Matrix.h"
+#include "Requirements.h"
+#include "Matrix.h"
 
 // --------------------------------------------------------------------------------------
 Matrix Inverse( const Matrix& m )

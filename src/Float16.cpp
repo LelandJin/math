@@ -5,8 +5,8 @@
 // Copyright:	CCP 2013
 //
 
-#include "include/Requirements.h"
-#include "include/Float16.h"
+#include "Requirements.h"
+#include "Float16.h"
 
 
 namespace

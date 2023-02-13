@@ -5,8 +5,8 @@
 // Copyright:	CCP 2013
 //
 
-#include "include/Requirements.h"
-#include "include/Vector3.h"
+#include "Requirements.h"
+#include "Vector3.h"
 
 // --------------------------------------------------------------------------------------
 void ComputeBoundingSphere(
