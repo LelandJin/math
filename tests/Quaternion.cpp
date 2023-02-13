@@ -220,7 +220,7 @@ TEST( Quaternion, QuaternionRotationMatrix )
 	Quaternion expected( 0.24740396f, 0.00000000f, 0.00000000f, 0.96891242f );
 
 	q2 = RotationQuaternion( m );
-	EXPECT_EQ( expected, q2 );
+	EXPECT_QUATERNION_EQ( expected, q2 );
 }
 
 TEST( Quaternion, QuaternionRotationAxis ) 
