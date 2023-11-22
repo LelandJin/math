@@ -248,7 +248,7 @@ TEST( Quaternion, QuaternionRotationYawPitchRoll )
 	Quaternion expected( 0.350018859f, 0.123841502f, 0.248718783f, 0.894588768f );
 
 	q2 = RotationQuaternion( yaw, pitch, roll );
-    EXPECT_QUATERNION_EQ( expected, q2 );
+	EXPECT_QUATERNION_EQ( expected, q2 );
 }
 
 TEST( Quaternion, QuaternionNormalize ) 
