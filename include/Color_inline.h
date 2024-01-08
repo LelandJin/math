@@ -147,3 +147,17 @@ inline Color Lerp( const Color& v1, const Color& v2, float s )
 {
 	return v1 + ( v2 - v1 ) * s;
 }
+
+// --------------------------------------------------------------------------------------
+inline Color Saturate( const Color& v, float saturation )
+{
+	if( saturation == 1.f )
+	{
+		return v;
+	}
+
+	// intensity (the magic numbers are values based on how strongly our eyes perceive each color)
+	float i = ( v.r * 0.299f ) + ( v.g * 0.587f ) + ( v.b * 0.114f );
+
+	return Lerp( Color( i, i, i, v.a ), v, std::max( 0.0f, saturation ) );
+}

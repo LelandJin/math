@@ -34,5 +34,6 @@ struct Color
 };
 
 Color Lerp( const Color& v1, const Color& v2, float s );
+Color Saturate( const Color& v, float s );
 
 #include "Color_inline.h"
