@@ -16,7 +16,15 @@ if(APPLE)
     target_link_libraries(CcpMathTest PRIVATE "-framework CoreFoundation")
 endif()
 
-target_compile_definitions(CcpMathTest PRIVATE BLUEBUILD)
+if(CMAKE_IMPORT_LIBRARY_SUFFIX)
+    add_custom_command(TARGET CcpMathTest POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different $<TARGET_RUNTIME_DLLS:CcpMathTest> $<TARGET_FILE_DIR:CcpMathTest>
+        COMMAND_EXPAND_LISTS
+        VERBATIM
+    )
+endif()
 
 set_target_properties(CcpMathTest PROPERTIES FOLDER "Tests")
-gtest_discover_tests(CcpMathTest)
+# Up the minimum Test discovery timeout from 10 seconds to 60
+gtest_discover_tests(CcpMathTest DISCOVERY_TIMEOUT 60)
+

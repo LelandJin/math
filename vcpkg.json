@@ -3,6 +3,13 @@
     {
       "name": "gtest",
       "version>=": "1.16.0"
+    },
+    "directxmath"
+  ],
+  "overrides": [
+    {
+      "name": "directxmath",
+      "version": "3.1.6"
     }
   ]
 }
