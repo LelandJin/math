@@ -143,5 +143,6 @@ elseif(APPLE)
     # Manually add debug symbols to builds
     add_compile_options(-g)
 
-    set(MATH_OPTIMIZE_FLAG -ffast-math -ffp-model=fast)
+    # Math optimization compile options
+    set(MATH_OPTIMIZE_FLAG -ffast-math -ffp-model=fast -fhonor-infinities -fhonor-nans)
 endif()
