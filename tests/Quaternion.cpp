@@ -214,7 +214,7 @@ TEST( Quaternion, QuaternionRotationMatrix )
 	Matrix id = IdentityMatrix();
 
 	Quaternion q2 = RotationQuaternion( id );
-	EXPECT_EQ( q2, IdentityQuaternion() );
+	EXPECT_QUATERNION_EQ( q2, IdentityQuaternion() );
 
 	Matrix m = RotationXMatrix( 0.5f );
 	Quaternion expected( 0.24740396f, 0.00000000f, 0.00000000f, 0.96891242f );
