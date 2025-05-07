@@ -88,7 +88,7 @@ if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
     install(
         EXPORT CcpMathTargets
         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/carbon-math
-        FILE carbon-math.cmake
+        FILE carbon-mathConfig.cmake
     )
 endif()
 
