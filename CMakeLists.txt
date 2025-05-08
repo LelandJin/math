@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.31)
 
-project(CcpMath VERSION 1.0.0)
+project(CcpMath)
 
 include(cmake/CcpGlobalSettings.cmake)
 include(cmake/CcpTargetConfigurations.cmake)
@@ -88,7 +88,11 @@ if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
     install(
         EXPORT CcpMathTargets
         DESTINATION ${CMAKE_INSTALL_PREFIX}/share/carbon-math
-        FILE carbon-mathConfig.cmake
+        FILE carbon-math.cmake
+    )
+    install(
+        FILES carbon-mathConfig.cmake
+        DESTINATION ${CMAKE_INSTALL_PREFIX}/share/carbon-math
     )
 endif()
 
