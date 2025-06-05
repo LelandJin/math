@@ -55,17 +55,15 @@ target_sources(CcpMath PRIVATE ${PUBLIC_HEADER_FILES})
 
 set_target_properties(CcpMath PROPERTIES POSITION_INDEPENDENT_CODE ON EXPORT_NAME CcpMath)
 
-# DirectXMath is a header only library, so there's no need set it as a link dependency
-get_target_property(DIRECTX_HEADERS_DIR Microsoft::DirectXMath INTERFACE_INCLUDE_DIRECTORIES)
-
 target_include_directories(CcpMath
     PUBLIC
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/src
-        ${DIRECTX_HEADERS_DIR}
 )
+
+target_link_libraries(CcpMath PUBLIC Microsoft::DirectXMath)
 
 target_compile_options(CcpMath PRIVATE "${MATH_OPTIMIZE_FLAG}")
 
@@ -95,6 +93,7 @@ if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
         configure_ccp_vendor_config_file(
                 TARGET CcpMath
                 DESTINATION "${CMAKE_CURRENT_BINARY_DIR}/CcpMathConfig.cmake"
+                DEPENDENCIES DirectXMath
         )
         install(FILES ${CMAKE_CURRENT_BINARY_DIR}/CcpMathConfig.cmake DESTINATION .)
     else() # "VCPKG" INSTALL_MODE, but there's no need for another option, as this will be the default
