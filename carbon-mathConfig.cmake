@@ -32,5 +32,4 @@ include(${CMAKE_CURRENT_LIST_DIR}/carbon-math.cmake)
 # find_dependency(b CONFIG NO_CMAKE_PATH REQUIRED)
 # find_dependency(c CONFIG NO_CMAKE_PATH REQUIRED)
 #
-
 find_dependency(DirectXMath CONFIG REQUIRED)
