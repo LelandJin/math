@@ -77,8 +77,8 @@ endif()
 
 # Provide an install target if this is the top level project only
 if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
-    set (INSTALL_MODE "PERFORCE" CACHE STRING "Install this package to a perforce branch vendor folder - provided for backwards compatability")
-    if(INSTALL_MODE STREQUAL "PERFORCE")
+    option (INSTALL_TO_MONOLITH "Install this package to a perforce branch vendor folder - provided for backwards compatability" ON)
+    if(INSTALL_TO_MONOLITH)
         # Install rule to ensure that our runtime and linker files are in the expected, platform-specific folders
         install(
                 TARGETS CcpMath
@@ -96,7 +96,7 @@ if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
                 DEPENDENCIES DirectXMath
         )
         install(FILES ${CMAKE_CURRENT_BINARY_DIR}/CcpMathConfig.cmake DESTINATION .)
-    else() # "VCPKG" INSTALL_MODE, but there's no need for another option, as this will be the default
+    else() # VCPKG install mode
         # Install rule to ensure that our runtime and linker files are in the vcpkg structure
         install(
             TARGETS CcpMath
