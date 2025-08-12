@@ -1,25 +1,12 @@
-cmake_minimum_required(VERSION 3.16)
+cmake_minimum_required(VERSION 3.31)
 
-project(CcpMath VERSION 1.0.0)
+project(CcpMath)
 
-if(NOT DEFINED ENV{CCP_EVE_PERFORCE_BRANCH_PATH})
-    message(FATAL_ERROR "Missing required environment variable CCP_EVE_PERFORCE_BRANCH_PATH")
-elseif(NOT IS_ABSOLUTE $ENV{CCP_EVE_PERFORCE_BRANCH_PATH})
-    message(FATAL_ERROR "CCP_EVE_PERFORCE_BRANCH_PATH needs to be an absolute path")
-elseif(NOT EXISTS $ENV{CCP_EVE_PERFORCE_BRANCH_PATH})
-    message(FATAL_ERROR "CCP_EVE_PERFORCE_BRANCH_PATH is pointing at a non-existing location $ENV{CCP_EVE_PERFORCE_BRANCH_PATH}")
-elseif(NOT IS_DIRECTORY $ENV{CCP_EVE_PERFORCE_BRANCH_PATH})
-    message(FATAL_ERROR "CCP_EVE_PERFORCE_BRANCH_PATH needs to be a directory")
-else()
-    message(STATUS "Using CCP_EVE_PERFORCE_BRANCH_PATH located at $ENV{CCP_EVE_PERFORCE_BRANCH_PATH}")
-endif()
+include(cmake/CcpGlobalSettings.cmake)
+include(cmake/CcpTargetConfigurations.cmake)
+include(cmake/CcpPackageConfigHelpers.cmake)
 
-file(TO_CMAKE_PATH "$ENV{CCP_EVE_PERFORCE_BRANCH_PATH}" BRANCH_ROOT_DIR)
-list(INSERT CMAKE_MODULE_PATH 0 ${BRANCH_ROOT_DIR}/cmake)
-include(CcpGlobalSettings)
-include(CcpPackageConfigHelpers)
-
-find_package(DirectXMath REQUIRED NO_CMAKE_PATH)
+find_package(DirectXMath CONFIG REQUIRED)
 
 ccp_add_library(CcpMath STATIC)
 target_sources(CcpMath PRIVATE
@@ -67,14 +54,16 @@ set(PUBLIC_HEADER_FILES
 target_sources(CcpMath PRIVATE ${PUBLIC_HEADER_FILES})
 
 set_target_properties(CcpMath PROPERTIES POSITION_INDEPENDENT_CODE ON EXPORT_NAME CcpMath)
+
 target_include_directories(CcpMath
     PUBLIC
-        ${CMAKE_CURRENT_SOURCE_DIR}/include
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        $<INSTALL_INTERFACE:include>
     PRIVATE
         ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
-target_link_libraries(CcpMath PUBLIC DirectXMath)
+target_link_libraries(CcpMath PUBLIC Microsoft::DirectXMath)
 
 target_compile_options(CcpMath PRIVATE "${MATH_OPTIMIZE_FLAG}")
 
@@ -86,24 +75,47 @@ if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
     endif()
 endif()
 
-# Provide an install target iff this is the top level project only
+# Provide an install target if this is the top level project only
 if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
-    # Install rule to ensure that our runtime and linker files are in the expected, platform-specific folders
-    install(
-        TARGETS CcpMath
-        EXPORT CcpMathTargets
-        CONFIGURATIONS ${CMAKE_CONFIGURATION_TYPES}
-        ARCHIVE DESTINATION lib/${CCP_PLATFORM}/${CCP_ARCHITECTURE}/${CCP_TOOLSET}/
-        RUNTIME DESTINATION bin/${CCP_PLATFORM}/${CCP_ARCHITECTURE}/${CCP_TOOLSET}/
-    )
-    # Install rule for available public headers
-    install(FILES ${PUBLIC_HEADER_FILES} DESTINATION include)
+    option (INSTALL_TO_MONOLITH "Install this package to a perforce branch vendor folder - provided for backwards compatability" ON)
+    if(INSTALL_TO_MONOLITH)
+        # Install rule to ensure that our runtime and linker files are in the expected, platform-specific folders
+        install(
+                TARGETS CcpMath
+                EXPORT CcpMathTargets
+                CONFIGURATIONS ${CMAKE_CONFIGURATION_TYPES}
+                ARCHIVE DESTINATION lib/${CCP_PLATFORM}/${CCP_ARCHITECTURE}/${CCP_TOOLSET}/
+                RUNTIME DESTINATION bin/${CCP_PLATFORM}/${CCP_ARCHITECTURE}/${CCP_TOOLSET}/
+        )
+        # Install rule for available public headers
+        install(FILES ${PUBLIC_HEADER_FILES} DESTINATION include)
 
-    configure_ccp_vendor_config_file(
-        TARGET CcpMath
-        DESTINATION "${CMAKE_CURRENT_BINARY_DIR}/CcpMathConfig.cmake"
-        DEPENDENCIES "DirectXMath"
-    )
-    install(FILES ${CMAKE_CURRENT_BINARY_DIR}/CcpMathConfig.cmake DESTINATION .)
+        configure_ccp_vendor_config_file(
+                TARGET CcpMath
+                DESTINATION "${CMAKE_CURRENT_BINARY_DIR}/CcpMathConfig.cmake"
+                DEPENDENCIES DirectXMath
+        )
+        install(FILES ${CMAKE_CURRENT_BINARY_DIR}/CcpMathConfig.cmake DESTINATION .)
+    else() # VCPKG install mode
+        # Install rule to ensure that our runtime and linker files are in the vcpkg structure
+        install(
+            TARGETS CcpMath
+            EXPORT CcpMathTargets
+            CONFIGURATIONS ${CMAKE_CONFIGURATION_TYPES}
+            ARCHIVE DESTINATION lib/
+            LIBRARY DESTINATION lib/
+        )
+        # Install rule for available public headers
+        install(FILES ${PUBLIC_HEADER_FILES} DESTINATION include)
+
+        install(
+            EXPORT CcpMathTargets
+            DESTINATION ${CMAKE_INSTALL_PREFIX}/share/carbon-math
+            FILE carbon-math.cmake
+        )
+        install(
+            FILES carbon-mathConfig.cmake
+            DESTINATION ${CMAKE_INSTALL_PREFIX}/share/carbon-math
+        )
+    endif()
 endif()
-
