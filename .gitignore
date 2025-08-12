@@ -1,9 +1,3 @@
-.vs/**
-out/**
-temp/**
-cmake-build*/
-.idea/
-
 CMakeUserPresets.json
 
 # Build output
