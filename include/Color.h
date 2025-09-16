@@ -4,7 +4,7 @@ struct Vector4;
 
 struct Color
 {
-	Color() {}
+	Color();
 	Color( uint32_t argb );
 	Color( const Vector4& );
 	Color( float r, float g, float b, float a );

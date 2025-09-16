@@ -9,7 +9,8 @@ static_assert( sizeof( Vector4_16 ) == 4 * 2, "Vector4_16 size incorrect, alignm
 
 
 // --------------------------------------------------------------------------------------
-inline Float_16::Float_16()
+inline Float_16::Float_16():
+	m_value( 0 )
 {
 }
 

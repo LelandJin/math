@@ -2,7 +2,11 @@
 #include "Matrix.h"
 
 // --------------------------------------------------------------------------------------
-inline Quaternion::Quaternion()
+inline Quaternion::Quaternion() :
+	x( 0.0f ),
+	y( 0.0f ),
+	z( 0.0f ),
+	w( 1.0f )
 {
 }
 
