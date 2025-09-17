@@ -4,13 +4,13 @@
 namespace CcpMath
 {
 
-inline Sphere::Sphere() :
+inline constexpr Sphere::Sphere() :
 	center( 0, 0, 0 ),
 	radius( -1 )
 {
 }
 
-inline Sphere::Sphere( const Vector3& center_, float radius_ ) :
+inline constexpr Sphere::Sphere( const Vector3& center_, float radius_ ) :
 	center( center_ ),
 	radius( radius_ )
 {

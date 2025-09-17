@@ -6,8 +6,8 @@ struct Vector3;
 
 struct Vector4
 {
-	Vector4();
-	Vector4( float x, float y, float z, float w );
+	constexpr Vector4();
+	constexpr Vector4( float x, float y, float z, float w );
 	Vector4( const Vector3& xyz, float w );
 	explicit Vector4( const XMVECTOR& other );
 

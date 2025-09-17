@@ -1,7 +1,7 @@
 #include "Vector3.h"
 
 // --------------------------------------------------------------------------------------
-inline Plane::Plane() :
+inline constexpr Plane::Plane() :
 	a( 0 ),
 	b( 0 ),
 	c( 0 ),
@@ -10,8 +10,8 @@ inline Plane::Plane() :
 }
 
 // --------------------------------------------------------------------------------------
-inline Plane::Plane( float a_, float b_, float c_, float d_ )
-	:a( a_ ),
+inline constexpr Plane::Plane( float a_, float b_, float c_, float d_ ) :
+	a( a_ ),
 	b( b_ ),
 	c( c_ ),
 	d( d_ )

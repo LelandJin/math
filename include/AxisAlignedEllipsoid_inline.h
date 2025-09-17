@@ -7,13 +7,13 @@
 namespace CcpMath
 {
 	
-inline AxisAlignedEllipsoid::AxisAlignedEllipsoid() :
+inline constexpr AxisAlignedEllipsoid::AxisAlignedEllipsoid() :
 	center( 0, 0, 0 ),
 	radii( 0, 0, 0 )
 {
 }
 
-inline AxisAlignedEllipsoid::AxisAlignedEllipsoid( const Vector3& c, const Vector3& r ) :
+inline constexpr AxisAlignedEllipsoid::AxisAlignedEllipsoid( const Vector3& c, const Vector3& r ) :
 	center( c ),
 	radii( r )
 {

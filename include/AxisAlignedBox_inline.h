@@ -7,13 +7,13 @@
 namespace CcpMath
 {
 
-inline AxisAlignedBox::AxisAlignedBox() :
+inline constexpr AxisAlignedBox::AxisAlignedBox() :
 	m_min( FLT_MAX, FLT_MAX, FLT_MAX ),
 	m_max( -FLT_MAX, -FLT_MAX, -FLT_MAX )
 {
 }
 
-inline AxisAlignedBox::AxisAlignedBox( const Vector3& min, const Vector3& max ) :
+inline constexpr AxisAlignedBox::AxisAlignedBox( const Vector3& min, const Vector3& max ) :
 	m_min( min ),
 	m_max( max )
 {

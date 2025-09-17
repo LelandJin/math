@@ -1,7 +1,7 @@
 #include "Vector4.h"
 
 // --------------------------------------------------------------------------------------
-inline Color::Color(): 
+inline constexpr Color::Color():
 	r( 0.0f ),
 	g( 0.0f ),
 	b( 0.0f ),
@@ -20,8 +20,8 @@ inline Color::Color( uint32_t dw )
 }
 
 // --------------------------------------------------------------------------------------
-inline Color::Color( const Vector4& other )
-	:r( other.x ),
+inline Color::Color( const Vector4& other ) :
+	r( other.x ),
 	g( other.y ),
 	b( other.z ),
 	a( other.w )
@@ -29,12 +29,12 @@ inline Color::Color( const Vector4& other )
 }
 
 // --------------------------------------------------------------------------------------
-inline Color::Color( float fr, float fg, float fb, float fa )
+inline constexpr Color::Color( float fr, float fg, float fb, float fa ) :
+	r( fr ),
+	g( fg ),
+	b( fb ),
+	a( fa )
 {
-	r = fr;
-	g = fg;
-	b = fb;
-	a = fa;
 }
 
 // --------------------------------------------------------------------------------------

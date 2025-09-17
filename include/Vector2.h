@@ -4,8 +4,8 @@
 
 struct Vector2
 {
-	Vector2();
-	Vector2( float x_, float y_ );
+	constexpr Vector2();
+	constexpr Vector2( float x_, float y_ );
 	Vector2( const XMVECTOR& other );
 
 	operator XMVECTOR() const;

@@ -1,7 +1,7 @@
 #include "Vector3.h"
 
 // --------------------------------------------------------------------------------------
-inline Vector4::Vector4() :
+inline constexpr Vector4::Vector4() :
 	x( 0.0f ),
 	y( 0.0f ),
 	z( 0.0f ),
@@ -10,8 +10,8 @@ inline Vector4::Vector4() :
 }
 
 // --------------------------------------------------------------------------------------
-inline Vector4::Vector4( float x_, float y_, float z_, float w_ )
-	:x( x_ ),
+inline constexpr Vector4::Vector4( float x_, float y_, float z_, float w_ ) :
+	x( x_ ),
 	y( y_ ),
 	z( z_ ),
 	w( w_ )
@@ -19,8 +19,8 @@ inline Vector4::Vector4( float x_, float y_, float z_, float w_ )
 }
 
 // --------------------------------------------------------------------------------------
-inline Vector4::Vector4( const Vector3& xyz, float w_ )
-	: x( xyz.x ),
+inline Vector4::Vector4( const Vector3& xyz, float w_ ) :
+	x( xyz.x ),
 	y( xyz.y ),
 	z( xyz.z ),
 	w( w_ )

@@ -9,20 +9,20 @@ static_assert( sizeof( Vector4_16 ) == 4 * 2, "Vector4_16 size incorrect, alignm
 
 
 // --------------------------------------------------------------------------------------
-inline Float_16::Float_16():
+inline constexpr Float_16::Float_16() :
 	m_value( 0 )
 {
 }
 
 // --------------------------------------------------------------------------------------
-inline Float_16::Float_16( float other )
-	: m_value( Float32To16( other ) )
+inline Float_16::Float_16( float other ) :
+	m_value( Float32To16( other ) )
 {
 }
 
 // --------------------------------------------------------------------------------------
-inline Float_16::Float_16( uint16_t other )
-	: m_value( other )
+inline constexpr Float_16::Float_16( uint16_t other ) :
+	m_value( other )
 {
 }
 
@@ -45,27 +45,27 @@ inline bool Float_16::operator != ( const Float_16& other ) const
 }
 
 // --------------------------------------------------------------------------------------
-inline Vector2_16::Vector2_16()
+inline constexpr Vector2_16::Vector2_16()
 {
 }
 
 // --------------------------------------------------------------------------------------
-inline Vector2_16::Vector2_16( float x_, float y_ )
-	:x( x_ ),
+inline Vector2_16::Vector2_16( float x_, float y_ ) :
+	x( x_ ),
 	y( y_ )
 {
 }
 
 // --------------------------------------------------------------------------------------
-inline Vector2_16::Vector2_16( Float_16 x_, Float_16 y_ )
-	:x( x_ ),
+inline constexpr Vector2_16::Vector2_16( Float_16 x_, Float_16 y_ ) :
+	x( x_ ),
 	y( y_ )
 {
 }
 
 // --------------------------------------------------------------------------------------
-inline Vector2_16::Vector2_16( const Vector2& other )
-	:x( other.x ),
+inline Vector2_16::Vector2_16( const Vector2& other ) :
+	x( other.x ),
 	y( other.y )
 {
 }
@@ -77,29 +77,29 @@ inline Vector2_16::operator Vector2() const
 }
 
 // --------------------------------------------------------------------------------------
-inline Vector3_16::Vector3_16()
+inline constexpr Vector3_16::Vector3_16()
 {
 }
 
 // --------------------------------------------------------------------------------------
-inline Vector3_16::Vector3_16( Float_16 x_, Float_16 y_, Float_16 z_ )
-	:x( x_ ),
+inline constexpr Vector3_16::Vector3_16( Float_16 x_, Float_16 y_, Float_16 z_ ) :
+	x( x_ ),
 	y( y_ ),
 	z( z_ )
 {
 }
 
 // --------------------------------------------------------------------------------------
-inline Vector3_16::Vector3_16( float x_, float y_, float z_ )
-	:x( x_ ),
+inline Vector3_16::Vector3_16( float x_, float y_, float z_ ) :
+	x( x_ ),
 	y( y_ ),
 	z( z_ )
 {
 }
 
 // --------------------------------------------------------------------------------------
-inline Vector3_16::Vector3_16( const Vector3& other )
-	:x( other.x ),
+inline Vector3_16::Vector3_16( const Vector3& other ) :
+	x( other.x ),
 	y( other.y ),
 	z( other.z )
 {
@@ -112,13 +112,13 @@ inline Vector3_16::operator Vector3() const
 }
 
 // --------------------------------------------------------------------------------------
-inline Vector4_16::Vector4_16()
+inline constexpr Vector4_16::Vector4_16()
 {
 }
 
 // --------------------------------------------------------------------------------------
-inline Vector4_16::Vector4_16( Float_16 x_, Float_16 y_, Float_16 z_, Float_16 w_ )
-	:x( x_ ),
+inline constexpr Vector4_16::Vector4_16( Float_16 x_, Float_16 y_, Float_16 z_, Float_16 w_ ) :
+	x( x_ ),
 	y( y_ ),
 	z( z_ ),
 	w( w_ )
@@ -126,8 +126,8 @@ inline Vector4_16::Vector4_16( Float_16 x_, Float_16 y_, Float_16 z_, Float_16 w
 }
 
 // --------------------------------------------------------------------------------------
-inline Vector4_16::Vector4_16( float x_, float y_, float z_, float w_ )
-	:x( x_ ),
+inline Vector4_16::Vector4_16( float x_, float y_, float z_, float w_ ) :
+	x( x_ ),
 	y( y_ ),
 	z( z_ ),
 	w( w_ )
@@ -135,8 +135,8 @@ inline Vector4_16::Vector4_16( float x_, float y_, float z_, float w_ )
 }
 
 // --------------------------------------------------------------------------------------
-inline Vector4_16::Vector4_16( const Vector4& other )
-	:x( other.x ),
+inline Vector4_16::Vector4_16( const Vector4& other ) :
+	x( other.x ),
 	y( other.y ),
 	z( other.z ),
 	w( other.w )

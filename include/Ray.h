@@ -7,8 +7,8 @@ namespace CcpMath
 
 struct Ray
 {
-	Ray() = default;
-	Ray( const Vector3& origin, const Vector3& direction );
+	constexpr Ray() = default;
+	constexpr Ray( const Vector3& origin, const Vector3& direction );
 
 	Vector3 origin;
 	Vector3 direction;

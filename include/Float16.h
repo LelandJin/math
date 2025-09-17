@@ -8,9 +8,9 @@ struct Vector4;
 
 struct Float_16
 {
-	Float_16();
+	constexpr Float_16();
 	explicit Float_16( float other );
-	explicit Float_16( uint16_t other );
+	constexpr explicit Float_16( uint16_t other );
 
 	operator float() const;
 
@@ -26,8 +26,8 @@ protected:
 
 struct Vector2_16
 {
-	Vector2_16();
-	Vector2_16( Float_16 x_, Float_16 y_ );
+	constexpr Vector2_16();
+	constexpr Vector2_16( Float_16 x_, Float_16 y_ );
 	Vector2_16( float x_, float y_ );
 	explicit Vector2_16( const Vector2& other );
 
@@ -39,8 +39,8 @@ struct Vector2_16
 
 struct Vector3_16
 {
-	Vector3_16();
-	Vector3_16( Float_16 x_, Float_16 y_, Float_16 z_ );
+	constexpr Vector3_16();
+	constexpr Vector3_16( Float_16 x_, Float_16 y_, Float_16 z_ );
 	Vector3_16( float x_, float y_, float z_ );
 	explicit Vector3_16( const Vector3& other );
 
@@ -52,8 +52,8 @@ struct Vector3_16
 
 struct Vector4_16
 {
-	Vector4_16();
-	Vector4_16( Float_16 x_, Float_16 y_, Float_16 z_, Float_16 w_ );
+	constexpr Vector4_16();
+	constexpr Vector4_16( Float_16 x_, Float_16 y_, Float_16 z_, Float_16 w_ );
 	Vector4_16( float x_, float y_, float z_, float w_ );
 	explicit Vector4_16( const Vector4& other );
 

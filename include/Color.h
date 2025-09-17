@@ -4,10 +4,10 @@ struct Vector4;
 
 struct Color
 {
-	Color();
+	constexpr Color();
 	Color( uint32_t argb );
 	Color( const Vector4& );
-	Color( float r, float g, float b, float a );
+	constexpr Color( float r, float g, float b, float a );
 
 	operator uint32_t() const;
 	operator Vector4() const;
