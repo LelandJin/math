@@ -12,8 +12,8 @@ struct AxisAlignedBox;
 
 struct Sphere
 {
-	Sphere();
-	Sphere( const Vector3& center, float radius );
+	constexpr Sphere();
+	constexpr Sphere( const Vector3& center, float radius );
 	explicit Sphere( const Vector4& packedSphere );
 	explicit Sphere( const AxisAlignedBox& box );
 	Sphere( const AxisAlignedBox& box, const Matrix& transform );

@@ -8,8 +8,8 @@ struct Matrix;
 
 struct Quaternion
 {
-	Quaternion();
-	Quaternion( float x, float y, float z, float w );
+	constexpr Quaternion();
+	constexpr Quaternion( float x, float y, float z, float w );
 	Quaternion( const XMVECTOR& other );
 	Quaternion( const Vector4& other );
 

@@ -13,8 +13,8 @@ struct Ray;
 
 struct AxisAlignedBox
 {
-	AxisAlignedBox();
-	AxisAlignedBox( const Vector3& min, const Vector3& max );
+	constexpr AxisAlignedBox();
+	constexpr AxisAlignedBox( const Vector3& min, const Vector3& max );
 	explicit AxisAlignedBox( const Vector4& sphere );
 	explicit AxisAlignedBox( const AxisAlignedEllipsoid& sphere );
 	explicit AxisAlignedBox( const Sphere& sphere );

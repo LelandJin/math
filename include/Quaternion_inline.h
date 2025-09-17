@@ -2,13 +2,17 @@
 #include "Matrix.h"
 
 // --------------------------------------------------------------------------------------
-inline Quaternion::Quaternion()
+inline constexpr Quaternion::Quaternion() :
+	x( 0.0f ),
+	y( 0.0f ),
+	z( 0.0f ),
+	w( 1.0f )
 {
 }
 
 // --------------------------------------------------------------------------------------
-inline Quaternion::Quaternion( float x_, float y_, float z_, float w_ )
-	:x( x_ ),
+inline constexpr Quaternion::Quaternion( float x_, float y_, float z_, float w_ ) :
+	x( x_ ),
 	y( y_ ),
 	z( z_ ),
 	w( w_ )
@@ -22,8 +26,8 @@ inline Quaternion::Quaternion( const XMVECTOR& other )
 }
 
 // --------------------------------------------------------------------------------------
-inline Quaternion::Quaternion( const Vector4& other )
-	:x( other.x ),
+inline Quaternion::Quaternion( const Vector4& other ) :
+	x( other.x ),
 	y( other.y ),
 	z( other.z ),
 	w( other.w )

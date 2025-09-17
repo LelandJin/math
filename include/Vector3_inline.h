@@ -1,12 +1,15 @@
 
 // --------------------------------------------------------------------------------------
-inline Vector3::Vector3()
+inline constexpr Vector3::Vector3() :
+	x( 0 ),
+	y( 0 ),
+	z( 0 )
 {
 }
 
 // --------------------------------------------------------------------------------------
-inline Vector3::Vector3( float x_, float y_, float z_ )
-	: x( x_ ),
+inline constexpr Vector3::Vector3( float x_, float y_, float z_ ) :
+	x( x_ ),
 	y( y_ ),
 	z( z_ )
 {

@@ -9,13 +9,12 @@ struct Matrix;
 namespace CcpMath
 {
 struct Sphere;
-struct Ray;
 struct AxisAlignedBox;
 
 struct AxisAlignedEllipsoid
 {
-	AxisAlignedEllipsoid();
-	AxisAlignedEllipsoid( const Vector3& center, const Vector3& radius );
+	constexpr AxisAlignedEllipsoid();
+	constexpr AxisAlignedEllipsoid( const Vector3& center, const Vector3& radius );
 	AxisAlignedEllipsoid( const AxisAlignedBox& box, bool inner );
 
 	bool IsInitialized() const;

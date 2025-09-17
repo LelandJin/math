@@ -11,8 +11,8 @@ struct Quaternion;
 
 struct Matrix
 {
-	Matrix();
-	Matrix(
+	constexpr Matrix();
+	constexpr Matrix(
 		float f11, float f12, float f13, float f14,
 		float f21, float f22, float f23, float f24,
 		float f31, float f32, float f33, float f34,

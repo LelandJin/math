@@ -6,8 +6,8 @@ struct Vector3;
 
 struct Plane
 {
-	Plane();
-	Plane( float a, float b, float c, float d );
+	constexpr Plane();
+	constexpr Plane( float a, float b, float c, float d );
 
 	// assignment operators
 	Plane& operator *= ( float );
