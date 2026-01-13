@@ -66,7 +66,8 @@ target_include_directories(CcpMath
 
 target_link_libraries(CcpMath PUBLIC Microsoft::DirectXMath)
 
-target_compile_options(CcpMath PRIVATE "${MATH_OPTIMIZE_FLAG}")
+# carbon-math needs these extra math compilation flags
+target_compile_options(CcpMath PRIVATE -ffast-math -ffp-model=fast -fhonor-infinities -fhonor-nans)
 
 if(CMAKE_PROJECT_NAME STREQUAL PROJECT_NAME)
     option(BUILD_TESTING "Build and run tests. Enabled by default." ON)
