@@ -1,3 +1,5 @@
+// Copyright (c) 2026 CCP Games
+
 #include "Vector4.h"
 #include "Matrix.h"
 

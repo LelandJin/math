@@ -1,3 +1,5 @@
+// Copyright (c) 2026 CCP Games
+
 #include "Sphere.h"
 #include "Ray.h"
 #include "AxisAlignedBox.h"

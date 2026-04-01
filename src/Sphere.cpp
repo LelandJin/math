@@ -1,3 +1,5 @@
+// Copyright (c) 2026 CCP Games
+
 #include "Sphere.h"
 #include "AxisAlignedBox.h"
 #include "Matrix.h"

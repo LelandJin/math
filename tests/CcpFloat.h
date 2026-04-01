@@ -1,3 +1,5 @@
+// Copyright (c) 2026 CCP Games
+
 #pragma once
 #ifndef CcpMathTest_CcpFloat_h
 #define CcpMathTest_CcpFloat_h

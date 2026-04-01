@@ -1,3 +1,5 @@
+// Copyright (c) 2026 CCP Games
+
 #include "gtest/gtest.h"
 
 int main( int argc, char **argv ) 

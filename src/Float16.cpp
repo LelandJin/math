@@ -1,9 +1,4 @@
-////////////////////////////////////////////////////////////////////////////////
-//
-// Creator:		Filipp Pavlov
-// Created:		June 2013
-// Copyright:	CCP 2013
-//
+// Copyright (c) 2026 CCP Games
 
 #include "Requirements.h"
 #include "Float16.h"
