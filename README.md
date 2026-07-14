@@ -1,4 +1,7 @@
 # Carbon Math
+
+[English](./README.md) | [简体中文](./README.zh-CN.md)
+
 > Provides some basic math utilities for vectors, planes, quaternions etc.
 
 ## 🛠️ Building
